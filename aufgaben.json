@@ -1,0 +1,827 @@
+[
+ {
+  "block": "A1",
+  "kennung": "A1 V2",
+  "titel": "Abstand Punkt–Ebene, parallele Ebenen",
+  "be": 6,
+  "kontext": "Gegeben sind die Ebene \\(E:\\; x_1+2x_2-2x_3=3\\) und der Punkt \\(P(2\\,|\\,4\\,|\\,-1)\\).",
+  "teile": [
+   [
+    "a",
+    "Berechne den Abstand von \\(P\\) zu \\(E\\).",
+    3
+   ],
+   [
+    "b",
+    "Bestimme die Gleichungen der beiden zu \\(E\\) parallelen Ebenen, die von \\(E\\) den Abstand 3 haben.",
+    3
+   ]
+  ],
+  "weg": "Beide Teile laufen über die Hessesche Normalform. Der Trick in b): Parallele Ebenen haben\n  <em>denselben</em> Normalenvektor, es ändert sich nur die Zahl auf der rechten Seite.",
+  "loesung": [
+   [
+    "a",
+    "Normalenvektor ablesen und Länge bestimmen:\n   \\[\\vec n=\\begin{pmatrix}1\\\\2\\\\-2\\end{pmatrix},\\qquad |\\vec n|=\\sqrt{1+4+4}=3.\\]\n   Damit lautet die Hessesche Normalform \\(\\dfrac{x_1+2x_2-2x_3-3}{3}=0\\).\n   Jetzt \\(P\\) einsetzen und den Betrag nehmen:\n   \\[d(P,E)=\\frac{|2+8+2-3|}{3}=\\frac{9}{3}=3.\\]"
+   ],
+   [
+    "b",
+    "Eine parallele Ebene hat die Form \\(x_1+2x_2-2x_3=c\\). Ihr Abstand zu \\(E\\) ist\n   \\[\\frac{|c-3|}{3}=3\\quad\\Longleftrightarrow\\quad |c-3|=9.\\]\n   Also \\(c-3=9\\) oder \\(c-3=-9\\), das heißt \\(c=12\\) oder \\(c=-6\\):\n   \\[E_1:\\; x_1+2x_2-2x_3=12,\\qquad E_2:\\; x_1+2x_2-2x_3=-6.\\]\n   Kontrolle: \\(P\\) erfüllt \\(2+8+2=12\\), liegt also auf \\(E_1\\) — passend zum Abstand 3 aus a)."
+   ]
+  ],
+  "fehler": "In a) den Betrag vergessen. Bei anderen Zahlen kommt dann ein negativer „Abstand“ heraus."
+ },
+ {
+  "block": "A1",
+  "kennung": "A1 V3",
+  "titel": "Abstand und zwei mögliche Punkte",
+  "be": 6,
+  "kontext": "Gegeben sind die Ebene \\(E:\\; 2x_1+2x_2+x_3=9\\) und der Ursprung \\(O(0\\,|\\,0\\,|\\,0)\\).",
+  "teile": [
+   [
+    "a",
+    "Bestimme den Abstand von \\(O\\) zu \\(E\\) mithilfe der Hesseschen Normalform.",
+    3
+   ],
+   [
+    "b",
+    "Bestimme alle Punkte auf der \\(x_3\\)-Achse, die von \\(E\\) den Abstand 3 besitzen.",
+    3
+   ]
+  ],
+  "weg": "In b) ist der gesuchte Punkt \\(Q(0\\,|\\,0\\,|\\,z)\\) — auf der \\(x_3\\)-Achse sind die ersten beiden\n  Koordinaten null. Die Abstandsgleichung wird dann zu einer Betragsgleichung in \\(z\\), und die hat\n  <strong>zwei</strong> Lösungen: eine ober- und eine unterhalb der Ebene.",
+  "loesung": [
+   [
+    "a",
+    "\\[\\vec n=\\begin{pmatrix}2\\\\2\\\\1\\end{pmatrix},\\qquad |\\vec n|=\\sqrt{4+4+1}=3.\\]\n   HNF: \\(\\dfrac{2x_1+2x_2+x_3-9}{3}=0\\). Einsetzen von \\(O(0|0|0)\\):\n   \\[d(O,E)=\\frac{|0+0+0-9|}{3}=\\frac{9}{3}=3.\\]"
+   ],
+   [
+    "b",
+    "Ansatz \\(Q(0\\,|\\,0\\,|\\,z)\\) und einsetzen:\n   \\[\\frac{|2\\cdot 0+2\\cdot 0+z-9|}{3}=3\\quad\\Longleftrightarrow\\quad |z-9|=9.\\]\n   Der Betrag wird aufgespalten:\n   \\[z-9=9\\;\\Rightarrow\\;z=18,\\qquad z-9=-9\\;\\Rightarrow\\;z=0.\\]\n   Also \\(Q_1(0\\,|\\,0\\,|\\,18)\\) und \\(Q_2(0\\,|\\,0\\,|\\,0)=O\\).\n   Das \\(O\\) dabei ist, passt genau zu a): \\(O\\) hat ja schon den Abstand 3."
+   ]
+  ],
+  "fehler": "Nur eine Lösung angeben. Der Betrag liefert immer zwei Fälle, solange der Abstand nicht null ist."
+ },
+ {
+  "block": "A2",
+  "kennung": "A2 V1",
+  "titel": "Abstand Punkt–Gerade",
+  "be": 5,
+  "kontext": "Gegeben sind die Gerade \\(g:\\;\\vec x=\\begin{pmatrix}1\\\\2\\\\0\\end{pmatrix}+t\\cdot\\begin{pmatrix}2\\\\1\\\\2\\end{pmatrix}\\) und der Punkt \\(P(5\\,|\\,1\\,|\\,1)\\).",
+  "teile": [
+   [
+    "",
+    "Berechne den Abstand von \\(P\\) zu \\(g\\) und bestimme den Lotfußpunkt. Wähle ein geeignetes Verfahren.",
+    5
+   ]
+  ],
+  "weg": "Weil auch der <strong>Lotfußpunkt</strong> gefragt ist, führt die Hilfsebene am schnellsten zum Ziel:\n  Man legt durch \\(P\\) eine Ebene senkrecht zu \\(g\\) und schneidet sie mit \\(g\\).\n  Das Kreuzprodukt liefert zwar den Abstand, aber nicht den Fußpunkt.",
+  "loesung": [
+   [
+    "",
+    "<strong>Schritt 1 — Hilfsebene.</strong> Sie steht senkrecht auf \\(g\\), also ist der\n   Richtungsvektor von \\(g\\) ihr Normalenvektor:\n   \\[H:\\; 2x_1+x_2+2x_3=2\\cdot 5+1\\cdot 1+2\\cdot 1=13.\\]\n   <strong>Schritt 2 — Gerade einsetzen.</strong>\n   \\[2(1+2t)+(2+t)+2\\cdot 2t=2+4t+2+t+4t=4+9t=13\\;\\Rightarrow\\;t=1.\\]\n   <strong>Schritt 3 — Fußpunkt.</strong> \\(t=1\\) in \\(g\\) einsetzen: \\(F(3\\,|\\,3\\,|\\,2)\\).\n   <strong>Schritt 4 — Abstand.</strong>\n   \\[\\vec{PF}=\\begin{pmatrix}3-5\\\\3-1\\\\2-1\\end{pmatrix}=\\begin{pmatrix}-2\\\\2\\\\1\\end{pmatrix},\\qquad\n   d=|\\vec{PF}|=\\sqrt{4+4+1}=3.\\]\n   <strong>Kontrolle mit der Flächenformel.</strong> Mit \\(\\vec{AP}=\\begin{pmatrix}4\\\\-1\\\\1\\end{pmatrix}\\):\n   \\[\\vec u\\times\\vec{AP}=\\begin{pmatrix}3\\\\6\\\\-6\\end{pmatrix},\\qquad\n   d=\\frac{|\\vec u\\times\\vec{AP}|}{|\\vec u|}=\\frac{9}{3}=3.\\;\\checkmark\\]"
+   ]
+  ],
+  "fehler": "Die Hilfsebene mit dem falschen Normalenvektor aufstellen. Er ist immer der Richtungsvektor der Geraden."
+ },
+ {
+  "block": "A2",
+  "kennung": "A2 V3",
+  "titel": "Lotfußpunkt mit Orthogonalitätsbedingung",
+  "be": 5,
+  "kontext": "Gegeben sind die Gerade \\(g:\\;\\vec x=\\begin{pmatrix}1\\\\-1\\\\2\\end{pmatrix}+t\\cdot\\begin{pmatrix}1\\\\2\\\\2\\end{pmatrix}\\) und der Punkt \\(P(4\\,|\\,2\\,|\\,2)\\).",
+  "teile": [
+   [
+    "a",
+    "Bestimme den Lotfußpunkt \\(F\\) von \\(P\\) auf \\(g\\).",
+    3
+   ],
+   [
+    "b",
+    "Berechne den Abstand von \\(P\\) zu \\(g\\).",
+    2
+   ]
+  ],
+  "weg": "Hier wird das <strong>Laufpunktverfahren</strong> gezeigt: Man schreibt den allgemeinen\n  Geradenpunkt \\(F_t\\) hin und verlangt, dass \\(\\vec{F_tP}\\) senkrecht auf der Geraden steht.\n  Eine Lösung über die Hilfsebene ist gleichwertig.",
+  "loesung": [
+   [
+    "a",
+    "Allgemeiner Geradenpunkt:\n   \\[F_t\\,(1+t\\;|\\;-1+2t\\;|\\;2+2t).\\]\n   Verbindungsvektor zu \\(P\\):\n   \\[\\vec{F_tP}=\\begin{pmatrix}4-(1+t)\\\\2-(-1+2t)\\\\2-(2+2t)\\end{pmatrix}=\\begin{pmatrix}3-t\\\\3-2t\\\\-2t\\end{pmatrix}.\\]\n   Orthogonalität zum Richtungsvektor:\n   \\[\\begin{pmatrix}3-t\\\\3-2t\\\\-2t\\end{pmatrix}\\cdot\\begin{pmatrix}1\\\\2\\\\2\\end{pmatrix}\n   =(3-t)+2(3-2t)-4t=9-9t=0\\;\\Rightarrow\\;t=1.\\]\n   Einsetzen: \\(F(2\\,|\\,1\\,|\\,4)\\)."
+   ],
+   [
+    "b",
+    "\\[\\vec{FP}=\\begin{pmatrix}4-2\\\\2-1\\\\2-4\\end{pmatrix}=\\begin{pmatrix}2\\\\1\\\\-2\\end{pmatrix},\\qquad\n   d=\\sqrt{4+1+4}=\\sqrt9=3.\\]"
+   ]
+  ],
+  "fehler": "Beim Skalarprodukt das Minuszeichen in \\(-2t\\cdot 2=-4t\\) verlieren."
+ },
+ {
+  "block": "A2",
+  "kennung": "A2 V4",
+  "titel": "Einen vermeintlichen Lotfußpunkt prüfen",
+  "be": 5,
+  "kontext": "Gegeben sind die Gerade \\(g:\\;\\vec x=t\\cdot\\begin{pmatrix}2\\\\1\\\\2\\end{pmatrix}\\) und der Punkt \\(P(0\\,|\\,3\\,|\\,3)\\).\n  Eine Schülerin behauptet: „Der Ursprung liegt auf \\(g\\), also ist er der Lotfußpunkt von \\(P\\).“",
+  "teile": [
+   [
+    "a",
+    "Widerlege die Begründung durch eine Rechnung.",
+    2
+   ],
+   [
+    "b",
+    "Bestimme den tatsächlichen Lotfußpunkt und den Abstand von \\(P\\) zu \\(g\\).",
+    3
+   ]
+  ],
+  "weg": "Ein Lotfußpunkt braucht <strong>zwei</strong> Eigenschaften: Er liegt auf der Geraden\n  <em>und</em> die Verbindung zu \\(P\\) steht senkrecht auf der Geraden. Die Schülerin prüft nur die erste.",
+  "loesung": [
+   [
+    "a",
+    "Der Ursprung liegt tatsächlich auf \\(g\\) (für \\(t=0\\)). Das allein reicht aber nicht.\n   Zu prüfen ist, ob \\(\\vec{OP}\\) senkrecht auf dem Richtungsvektor steht:\n   \\[\\vec{OP}\\cdot\\vec u=\\begin{pmatrix}0\\\\3\\\\3\\end{pmatrix}\\cdot\\begin{pmatrix}2\\\\1\\\\2\\end{pmatrix}=0+3+6=9\\neq 0.\\]\n   Das Skalarprodukt ist nicht null, die Verbindung steht also nicht senkrecht.\n   Der Ursprung ist damit <strong>nicht</strong> der Lotfußpunkt."
+   ],
+   [
+    "b",
+    "Laufpunkt \\(F_t\\,(2t\\,|\\,t\\,|\\,2t)\\), Bedingung \\(\\vec{F_tP}\\cdot\\vec u=0\\):\n   \\[\\left(\\begin{pmatrix}0\\\\3\\\\3\\end{pmatrix}-t\\begin{pmatrix}2\\\\1\\\\2\\end{pmatrix}\\right)\\cdot\\begin{pmatrix}2\\\\1\\\\2\\end{pmatrix}\n   =9-9t=0\\;\\Rightarrow\\;t=1.\\]\n   Also \\(F(2\\,|\\,1\\,|\\,2)\\) und\n   \\[\\vec{FP}=\\begin{pmatrix}-2\\\\2\\\\1\\end{pmatrix},\\qquad d=\\sqrt{4+4+1}=3.\\]"
+   ]
+  ],
+  "fehler": null
+ },
+ {
+  "block": "A3",
+  "kennung": "A3 V1",
+  "titel": "Lage und Abstand zweier Geraden",
+  "be": 5,
+  "kontext": "Gegeben sind \\(g:\\;\\vec x=\\begin{pmatrix}1\\\\0\\\\2\\end{pmatrix}+r\\cdot\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}\\) und \\(h:\\;\\vec x=\\begin{pmatrix}3\\\\1\\\\4\\end{pmatrix}+s\\cdot\\begin{pmatrix}0\\\\1\\\\1\\end{pmatrix}\\).",
+  "teile": [
+   [
+    "a",
+    "Untersuche die gegenseitige Lage von \\(g\\) und \\(h\\).",
+    2
+   ],
+   [
+    "b",
+    "Berechne den Abstand von \\(g\\) und \\(h\\).",
+    3
+   ]
+  ],
+  "weg": "Erst Richtungsvektoren vergleichen (parallel?), dann gleichsetzen (Schnittpunkt?).\n  Bleibt beides übrig, sind die Geraden windschief. Für den Abstand nimmt man das\n  gemeinsame Lot \\(\\vec n=\\vec u\\times\\vec v\\).",
+  "loesung": [
+   [
+    "a",
+    "\\(\\vec u=\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}\\) und \\(\\vec v=\\begin{pmatrix}0\\\\1\\\\1\\end{pmatrix}\\) sind keine\n   Vielfachen voneinander, also nicht parallel.<br>\n   Gleichsetzen: \\(1+r=3\\Rightarrow r=2\\); \\(r=1+s\\Rightarrow s=1\\); dritte Zeile \\(2=4+s\\Rightarrow s=-2\\).\n   Widerspruch — kein Schnittpunkt. Die Geraden sind <strong>windschief</strong>."
+   ],
+   [
+    "b",
+    "Gemeinsames Lot:\n   \\[\\vec n=\\vec u\\times\\vec v=\\begin{pmatrix}1\\cdot 1-0\\cdot 1\\\\0\\cdot 0-1\\cdot 1\\\\1\\cdot 1-1\\cdot 0\\end{pmatrix}\n   =\\begin{pmatrix}1\\\\-1\\\\1\\end{pmatrix},\\qquad |\\vec n|=\\sqrt3.\\]\n   Verbindung der Stützpunkte: \\(\\vec{AB}=\\begin{pmatrix}2\\\\1\\\\2\\end{pmatrix}\\). Damit\n   \\[d=\\frac{|\\vec n\\cdot\\vec{AB}|}{|\\vec n|}=\\frac{|2-1+2|}{\\sqrt3}=\\frac{3}{\\sqrt3}=\\sqrt3\\approx 1{,}73.\\]\n   Weil \\(d\\neq 0\\) ist, bestätigt sich auch rechnerisch: windschief, nicht schneidend."
+   ]
+  ],
+  "fehler": "Den Betrag im Zähler vergessen — je nach Reihenfolge der Stützpunkte wird das Skalarprodukt negativ."
+ },
+ {
+  "block": "A3",
+  "kennung": "A3 V2",
+  "titel": "Lage und Abstand zweier Geraden",
+  "be": 6,
+  "kontext": "Gegeben sind \\(g:\\;\\vec x=\\begin{pmatrix}2\\\\1\\\\0\\end{pmatrix}+r\\cdot\\begin{pmatrix}1\\\\0\\\\1\\end{pmatrix}\\) und \\(h:\\;\\vec x=\\begin{pmatrix}0\\\\1\\\\1\\end{pmatrix}+s\\cdot\\begin{pmatrix}1\\\\2\\\\0\\end{pmatrix}\\).",
+  "teile": [
+   [
+    "a",
+    "Untersuche die gegenseitige Lage von \\(g\\) und \\(h\\).",
+    3
+   ],
+   [
+    "b",
+    "Berechne den Abstand von \\(g\\) und \\(h\\).",
+    3
+   ]
+  ],
+  "weg": "Gleiches Vorgehen wie in A3 V1, hier gehen die Zahlen glatt auf.",
+  "loesung": [
+   [
+    "a",
+    "Die Richtungsvektoren \\(\\begin{pmatrix}1\\\\0\\\\1\\end{pmatrix}\\) und \\(\\begin{pmatrix}1\\\\2\\\\0\\end{pmatrix}\\)\n   sind keine Vielfachen, also nicht parallel.<br>\n   Gleichsetzen liefert das System\n   \\[2+r=s,\\qquad 1=1+2s,\\qquad r=1.\\]\n   Aus der zweiten Zeile folgt \\(s=0\\), damit aus der ersten \\(r=-2\\).\n   Die dritte Zeile verlangt aber \\(r=1\\). Widerspruch, kein Schnittpunkt.\n   Die Geraden sind <strong>windschief</strong>."
+   ],
+   [
+    "b",
+    "\\[\\vec n=\\vec u\\times\\vec v=\\begin{pmatrix}-2\\\\1\\\\2\\end{pmatrix},\\qquad |\\vec n|=\\sqrt{4+1+4}=3.\\]\n   \\[\\vec{AB}=\\begin{pmatrix}0-2\\\\1-1\\\\1-0\\end{pmatrix}=\\begin{pmatrix}-2\\\\0\\\\1\\end{pmatrix},\\qquad\n   \\vec n\\cdot\\vec{AB}=4+0+2=6.\\]\n   \\[d=\\frac{6}{3}=2.\\]"
+   ]
+  ],
+  "fehler": null
+ },
+ {
+  "block": "A3",
+  "kennung": "A3 V4",
+  "titel": "Windschiefe Geraden und beide Lotpunkte",
+  "be": 6,
+  "kontext": "Gegeben sind \\(g:\\;\\vec x=r\\cdot\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}\\) und \\(h:\\;\\vec x=\\begin{pmatrix}2\\\\0\\\\1\\end{pmatrix}+s\\cdot\\begin{pmatrix}0\\\\1\\\\1\\end{pmatrix}\\).",
+  "teile": [
+   [
+    "a",
+    "Untersuche die gegenseitige Lage der Geraden.",
+    2
+   ],
+   [
+    "b",
+    "Bestimme die Endpunkte ihrer kürzesten Verbindungsstrecke und ihren Abstand.",
+    4
+   ]
+  ],
+  "weg": "Wenn nicht nur die <em>Zahl</em> (der Abstand), sondern auch die <em>Orte</em> gefragt sind,\n  reicht das Spatprodukt nicht. Man braucht den Vektorzug: allgemeiner Punkt auf \\(g\\),\n  allgemeiner Punkt auf \\(h\\), und die Verbindung muss auf <strong>beiden</strong> Richtungen senkrecht stehen.\n  Das sind zwei Gleichungen für zwei Unbekannte.",
+  "loesung": [
+   [
+    "a",
+    "Die Richtungen \\(\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}\\) und \\(\\begin{pmatrix}0\\\\1\\\\1\\end{pmatrix}\\) sind nicht parallel.\n   Ein Schnittpunkt verlangte \\(r=2\\) (erste Zeile), \\(r=s\\) (zweite) und \\(0=1+s\\) (dritte).\n   Aus der dritten folgt \\(s=-1\\), aus der zweiten also \\(r=-1\\) — Widerspruch zu \\(r=2\\).\n   Kein Schnittpunkt, also <strong>windschief</strong>."
+   ],
+   [
+    "b",
+    "Allgemeine Punkte:\n   \\[G(r\\,|\\,r\\,|\\,0)\\ \\text{auf } g,\\qquad H(2\\,|\\,s\\,|\\,1+s)\\ \\text{auf } h.\\]\n   \\[\\vec{GH}=\\begin{pmatrix}2-r\\\\s-r\\\\1+s\\end{pmatrix}.\\]\n   Zwei Orthogonalitätsbedingungen:\n   \\[\\vec{GH}\\cdot\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}=(2-r)+(s-r)=2+s-2r=0,\\]\n   \\[\\vec{GH}\\cdot\\begin{pmatrix}0\\\\1\\\\1\\end{pmatrix}=(s-r)+(1+s)=1+2s-r=0.\\]\n   Aus der zweiten Gleichung \\(r=1+2s\\); eingesetzt in die erste:\n   \\(2+s-2(1+2s)=-3s=0\\), also \\(s=0\\) und \\(r=1\\).\n   \\[G(1\\,|\\,1\\,|\\,0),\\qquad H(2\\,|\\,0\\,|\\,1),\\qquad\n   \\vec{GH}=\\begin{pmatrix}1\\\\-1\\\\1\\end{pmatrix},\\quad d=\\sqrt3.\\]\n   Probe: \\(\\vec{GH}\\) steht wirklich senkrecht auf beiden Richtungsvektoren. \\(\\checkmark\\)"
+   ]
+  ],
+  "fehler": "Nur eine der beiden Bedingungen aufstellen. Für zwei Unbekannte braucht man zwei Gleichungen."
+ },
+ {
+  "block": "A4",
+  "kennung": "A4 V1",
+  "titel": "Lotfußpunkt und Spiegelpunkt",
+  "be": 6,
+  "kontext": "Gegeben sind die Ebene \\(E:\\; x_1+2x_2+2x_3=1\\) und der Punkt \\(P(3\\,|\\,4\\,|\\,4)\\).",
+  "teile": [
+   [
+    "a",
+    "Bestimme den Lotfußpunkt \\(F\\) von \\(P\\) auf \\(E\\).",
+    3
+   ],
+   [
+    "b",
+    "Bestimme den Spiegelpunkt \\(P'\\) von \\(P\\) bezüglich \\(E\\) und gib den Abstand von \\(P\\) zu \\(E\\) an.",
+    3
+   ]
+  ],
+  "weg": "Standardverfahren: Lotgerade durch \\(P\\) in Richtung \\(\\vec n\\) aufstellen, in die Ebenengleichung\n  einsetzen, Parameter bestimmen. Der Spiegelpunkt liegt genau doppelt so weit —\n  am elegantesten über \\(\\vec{OP'}=2\\vec{OF}-\\vec{OP}\\).",
+  "loesung": [
+   [
+    "a",
+    "Lotgerade: \\(\\vec x=\\begin{pmatrix}3\\\\4\\\\4\\end{pmatrix}+t\\cdot\\begin{pmatrix}1\\\\2\\\\2\\end{pmatrix}\\).\n   Einsetzen in \\(E\\):\n   \\[(3+t)+2(4+2t)+2(4+2t)=3+t+8+4t+8+4t=19+9t=1\\;\\Rightarrow\\;t=-2.\\]\n   \\[F=\\begin{pmatrix}3\\\\4\\\\4\\end{pmatrix}-2\\cdot\\begin{pmatrix}1\\\\2\\\\2\\end{pmatrix}=\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}\\;\\Rightarrow\\;F(1\\,|\\,0\\,|\\,0).\\]"
+   ],
+   [
+    "b",
+    "\\[\\vec{OP'}=2\\vec{OF}-\\vec{OP}=\\begin{pmatrix}2\\\\0\\\\0\\end{pmatrix}-\\begin{pmatrix}3\\\\4\\\\4\\end{pmatrix}\n   =\\begin{pmatrix}-1\\\\-4\\\\-4\\end{pmatrix}\\;\\Rightarrow\\;P'(-1\\,|\\,-4\\,|\\,-4).\\]\n   Abstand: \\(|\\vec n|=\\sqrt{1+4+4}=3\\), also\n   \\[d=|t|\\cdot|\\vec n|=2\\cdot 3=6.\\]\n   Kontrolle über die HNF: \\(\\dfrac{|3+8+8-1|}{3}=\\dfrac{18}{3}=6\\). \\(\\checkmark\\)"
+   ]
+  ],
+  "fehler": "Den Spiegelpunkt als \\(F+\\vec{PF}\\) statt \\(P+2\\vec{PF}\\) berechnen. Die Formel \\(\\vec{OP'}=2\\vec{OF}-\\vec{OP}\\) ist sicherer."
+ },
+ {
+  "block": "A4",
+  "kennung": "A4 V2",
+  "titel": "Lotfußpunkt und Spiegelpunkt",
+  "be": 6,
+  "kontext": "Gegeben sind die Ebene \\(E:\\; 2x_1-2x_2+x_3=4\\) und der Punkt \\(P(8\\,|\\,-6\\,|\\,3)\\).",
+  "teile": [
+   [
+    "a",
+    "Bestimme den Lotfußpunkt \\(F\\) von \\(P\\) auf \\(E\\).",
+    3
+   ],
+   [
+    "b",
+    "Bestimme den Spiegelpunkt \\(P'\\) von \\(P\\) bezüglich \\(E\\) und gib den Abstand von \\(P\\) zu \\(E\\) an.",
+    3
+   ]
+  ],
+  "weg": "Gleiches Verfahren wie A4 V1, nur mit negativen Koordinaten.",
+  "loesung": [
+   [
+    "a",
+    "Lotgerade: \\(\\vec x=\\begin{pmatrix}8\\\\-6\\\\3\\end{pmatrix}+t\\cdot\\begin{pmatrix}2\\\\-2\\\\1\\end{pmatrix}\\).\n   \\[2(8+2t)-2(-6-2t)+(3+t)=16+4t+12+4t+3+t=31+9t=4\\;\\Rightarrow\\;t=-3.\\]\n   \\[F=\\begin{pmatrix}8\\\\-6\\\\3\\end{pmatrix}-3\\cdot\\begin{pmatrix}2\\\\-2\\\\1\\end{pmatrix}=\\begin{pmatrix}2\\\\0\\\\0\\end{pmatrix}\\;\\Rightarrow\\;F(2\\,|\\,0\\,|\\,0).\\]"
+   ],
+   [
+    "b",
+    "\\[\\vec{OP'}=2\\vec{OF}-\\vec{OP}=\\begin{pmatrix}4\\\\0\\\\0\\end{pmatrix}-\\begin{pmatrix}8\\\\-6\\\\3\\end{pmatrix}\n   =\\begin{pmatrix}-4\\\\6\\\\-3\\end{pmatrix}\\;\\Rightarrow\\;P'(-4\\,|\\,6\\,|\\,-3).\\]\n   \\(|\\vec n|=\\sqrt{4+4+1}=3\\), also \\(d=|{-3}|\\cdot 3=9\\)."
+   ]
+  ],
+  "fehler": "Bei \\(-2\\cdot(-6-2t)\\) ein Vorzeichen verlieren. Klammern konsequent setzen."
+ },
+ {
+  "block": "A4",
+  "kennung": "A4 V3",
+  "titel": "Spiegelebene rekonstruieren",
+  "be": 6,
+  "kontext": "Der Punkt \\(P(5\\,|\\,1\\,|\\,2)\\) wird an einer Ebene \\(E\\) auf \\(P'(-3\\,|\\,5\\,|\\,2)\\) gespiegelt.",
+  "teile": [
+   [
+    "a",
+    "Bestimme eine Koordinatengleichung von \\(E\\). Erläutere dabei die geometrischen Eigenschaften, die du verwendest.",
+    4
+   ],
+   [
+    "b",
+    "Berechne den Abstand von \\(P\\) zu \\(E\\).",
+    2
+   ]
+  ],
+  "weg": "Das ist eine <strong>Umkehraufgabe</strong>. Zwei Eigenschaften der Spiegelung reichen aus:\n  <strong>(1)</strong> \\(E\\) steht senkrecht auf der Strecke \\(PP'\\) — der Verbindungsvektor ist also ein\n  Normalenvektor. <strong>(2)</strong> \\(E\\) halbiert die Strecke — der Mittelpunkt liegt in \\(E\\).\n  \\(E\\) ist genau die Mittelsenkrechtenebene von \\(PP'\\).",
+  "loesung": [
+   [
+    "a",
+    "<strong>Normalenvektor.</strong>\n   \\[\\vec{PP'}=\\begin{pmatrix}-3-5\\\\5-1\\\\2-2\\end{pmatrix}=\\begin{pmatrix}-8\\\\4\\\\0\\end{pmatrix}\\;\\parallel\\;\\begin{pmatrix}2\\\\-1\\\\0\\end{pmatrix}.\\]\n   (Gekürzt durch \\(-4\\); jedes Vielfache ist als Normalenvektor erlaubt.)<br>\n   <strong>Punkt in der Ebene.</strong> Der Mittelpunkt von \\(PP'\\):\n   \\[M=\\tfrac12\\left(\\begin{pmatrix}5\\\\1\\\\2\\end{pmatrix}+\\begin{pmatrix}-3\\\\5\\\\2\\end{pmatrix}\\right)=\\begin{pmatrix}1\\\\3\\\\2\\end{pmatrix}\\;\\Rightarrow\\;M(1\\,|\\,3\\,|\\,2).\\]\n   <strong>Gleichung.</strong> Ansatz \\(2x_1-x_2=c\\), \\(M\\) einsetzen: \\(2\\cdot 1-3=-1\\).\n   \\[E:\\; 2x_1-x_2=-1.\\]\n   Probe: \\(P\\) liefert \\(10-1=9\\), \\(P'\\) liefert \\(-6-5=-11\\) — beide gleich weit von \\(-1\\) entfernt\n   (je 10), und auf entgegengesetzten Seiten. \\(\\checkmark\\)"
+   ],
+   [
+    "b",
+    "Der Abstand ist die halbe Strecke \\(PP'\\):\n   \\[d=\\tfrac12\\left|\\begin{pmatrix}-8\\\\4\\\\0\\end{pmatrix}\\right|=\\tfrac12\\sqrt{64+16}=\\tfrac12\\sqrt{80}=2\\sqrt5\\approx 4{,}47.\\]\n   Kontrolle über die HNF mit \\(|\\vec n|=\\sqrt{4+1+0}=\\sqrt5\\):\n   \\[d=\\frac{|2\\cdot 5-1+1|}{\\sqrt5}=\\frac{10}{\\sqrt5}=2\\sqrt5.\\;\\checkmark\\]"
+   ]
+  ],
+  "fehler": "Die dritte Koordinate: Sie ändert sich nicht, deshalb ist die dritte Komponente des Normalenvektors null und \\(x_3\\) kommt in der Gleichung gar nicht vor."
+ },
+ {
+  "block": "A5",
+  "kennung": "A5 V2",
+  "titel": "Vierfeldertafel und Unabhängigkeit",
+  "be": 6,
+  "kontext": "In einem Fahrradverleih sind 40 % der Räder E-Bikes (Ereignis \\(E\\)). 25 % aller Räder haben\n  einen Bremsdefekt (Ereignis \\(D\\)). Von den E-Bikes haben 10 % einen Bremsdefekt.\n  Ein Rad wird zufällig aus dem Bestand ausgewählt.",
+  "teile": [
+   [
+    "a",
+    "Stelle die vollständige Vierfeldertafel auf.",
+    2
+   ],
+   [
+    "b",
+    "Aus allen Rädern mit Bremsdefekt wird eines zufällig ausgewählt. Berechne die Wahrscheinlichkeit, dass es ein E-Bike ist.",
+    2
+   ],
+   [
+    "c",
+    "Prüfe, ob \\(E\\) und \\(D\\) stochastisch unabhängig sind.",
+    2
+   ]
+  ],
+  "weg": "Aufpassen bei „Von den E-Bikes haben 10 % …“ — das ist eine <strong>bedingte</strong>\n  Wahrscheinlichkeit \\(P_E(D)=0{,}10\\), kein Feld der Tafel. Das Innenfeld bekommt man erst\n  durch Multiplikation: \\(P(E\\cap D)=P(E)\\cdot P_E(D)\\).",
+  "loesung": [
+   [
+    "a",
+    "\\[P(E\\cap D)=0{,}4\\cdot 0{,}10=0{,}04.\\]\n   Der Rest ergibt sich durch Ergänzen auf die Ränder \\(P(E)=0{,}4\\) und \\(P(D)=0{,}25\\):\n   <table class=\"vft\"><tr><th></th><th>\\(D\\)</th><th>\\(\\bar D\\)</th><th>Summe</th></tr>\n   <tr><th>\\(E\\)</th><td>0,04</td><td>0,36</td><td>0,40</td></tr>\n   <tr><th>\\(\\bar E\\)</th><td>0,21</td><td>0,39</td><td>0,60</td></tr>\n   <tr><th>Summe</th><td>0,25</td><td>0,75</td><td>1,00</td></tr></table>"
+   ],
+   [
+    "b",
+    "Gefragt ist \\(P_D(E)\\) — die Bedingung ist „hat Bremsdefekt“:\n   \\[P_D(E)=\\frac{P(E\\cap D)}{P(D)}=\\frac{0{,}04}{0{,}25}=0{,}16.\\]\n   In Worten: 16 % der defekten Räder sind E-Bikes."
+   ],
+   [
+    "c",
+    "Unabhängigkeitsprobe:\n   \\[P(E)\\cdot P(D)=0{,}4\\cdot 0{,}25=0{,}10\\neq 0{,}04=P(E\\cap D).\\]\n   Die Ereignisse sind also <strong>abhängig</strong>.<br>\n   Gleichwertig: \\(P_E(D)=0{,}10\\neq 0{,}25=P(D)\\) — zu wissen, dass es ein E-Bike ist,\n   verändert die Defektwahrscheinlichkeit."
+   ]
+  ],
+  "fehler": "\\(P_D(E)\\) und \\(P_E(D)\\) verwechseln. Hier sind es 0,16 gegen 0,10 — zwei verschiedene Fragen."
+ },
+ {
+  "block": "A5",
+  "kennung": "A5 V3",
+  "titel": "Unabhängigkeit als Bedingung",
+  "be": 6,
+  "kontext": "Aus 100 Personen wird eine zufällig ausgewählt. 40 Personen nutzen den Bus (\\(B\\)),\n  30 besuchen die Musikschule (\\(M\\)). Genau \\(a\\) Personen gehören zu beiden Gruppen.",
+  "teile": [
+   [
+    "a",
+    "Bestimme \\(a\\) so, dass \\(B\\) und \\(M\\) stochastisch unabhängig sind.",
+    2
+   ],
+   [
+    "b",
+    "Stelle für diesen Fall die vollständige Vierfeldertafel mit absoluten Häufigkeiten auf.",
+    2
+   ],
+   [
+    "c",
+    "Tatsächlich gehören 18 Personen zu beiden Gruppen. Berechne die bedingte Wahrscheinlichkeit \\(P_M(B)\\) und entscheide über die Unabhängigkeit.",
+    2
+   ]
+  ],
+  "weg": "Die Aufgabe dreht die übliche Richtung um: Statt Unabhängigkeit zu <em>prüfen</em>,\n  wird sie erst <em>hergestellt</em> und danach am echten Wert geprüft.",
+  "loesung": [
+   [
+    "a",
+    "Unabhängigkeit bedeutet \\(P(B\\cap M)=P(B)\\cdot P(M)\\):\n   \\[\\frac{a}{100}=0{,}4\\cdot 0{,}3=0{,}12\\;\\Rightarrow\\;a=12.\\]"
+   ],
+   [
+    "b",
+    "<table class=\"vft\"><tr><th></th><th>\\(M\\)</th><th>\\(\\bar M\\)</th><th>Summe</th></tr>\n   <tr><th>\\(B\\)</th><td>12</td><td>28</td><td>40</td></tr>\n   <tr><th>\\(\\bar B\\)</th><td>18</td><td>42</td><td>60</td></tr>\n   <tr><th>Summe</th><td>30</td><td>70</td><td>100</td></tr></table>"
+   ],
+   [
+    "c",
+    "Mit \\(a=18\\):\n   \\[P_M(B)=\\frac{18}{30}=0{,}6.\\]\n   Vergleich mit \\(P(B)=0{,}4\\): Die beiden Werte sind verschieden, also sind \\(B\\) und \\(M\\)\n   <strong>abhängig</strong>. Unter den Musikschülern ist der Busanteil deutlich höher\n   als in der Gesamtgruppe."
+   ]
+  ],
+  "fehler": null
+ },
+ {
+  "block": "A5",
+  "kennung": "A5 V4",
+  "titel": "Vertauschte Bedingungen beim Ticketverkauf",
+  "be": 6,
+  "kontext": "Von 200 verkauften Tickets wurden 120 online gebucht (\\(O\\)). 80 Tickets sind ermäßigt (\\(R\\)).\n  60 Tickets sind sowohl online gebucht als auch ermäßigt. Ein verkauftes Ticket wird zufällig ausgewählt.",
+  "teile": [
+   [
+    "a",
+    "Erstelle eine vollständige Vierfeldertafel mit absoluten Häufigkeiten.",
+    2
+   ],
+   [
+    "b",
+    "Berechne \\(P_R(O)\\) und \\(P_O(R)\\). Erläutere, auf welche Gruppe sich jeweils die Wahrscheinlichkeit bezieht.",
+    2
+   ],
+   [
+    "c",
+    "Prüfe \\(O\\) und \\(R\\) auf stochastische Unabhängigkeit.",
+    2
+   ]
+  ],
+  "weg": "Kernpunkt der Aufgabe: \\(P_R(O)\\) und \\(P_O(R)\\) haben denselben Zähler, aber verschiedene Nenner.\n  Der Nenner ist immer die <strong>Bedingung</strong> — also die Gruppe, über die geredet wird.",
+  "loesung": [
+   [
+    "a",
+    "<table class=\"vft\"><tr><th></th><th>\\(R\\)</th><th>\\(\\bar R\\)</th><th>Summe</th></tr>\n   <tr><th>\\(O\\)</th><td>60</td><td>60</td><td>120</td></tr>\n   <tr><th>\\(\\bar O\\)</th><td>20</td><td>60</td><td>80</td></tr>\n   <tr><th>Summe</th><td>80</td><td>120</td><td>200</td></tr></table>"
+   ],
+   [
+    "b",
+    "\\[P_R(O)=\\frac{60}{80}=0{,}75,\\qquad P_O(R)=\\frac{60}{120}=0{,}5.\\]\n   <strong>Bezug:</strong> \\(P_R(O)=0{,}75\\) — von den <em>ermäßigten</em> Tickets wurden 75 % online gebucht.<br>\n   \\(P_O(R)=0{,}5\\) — von den <em>online gebuchten</em> Tickets sind 50 % ermäßigt.\n   Gleicher Schnitt, verschiedene Grundgesamtheit."
+   ],
+   [
+    "c",
+    "\\[P(O\\cap R)=\\frac{60}{200}=0{,}3,\\qquad\n   P(O)\\cdot P(R)=0{,}6\\cdot 0{,}4=0{,}24.\\]\n   \\(0{,}3\\neq 0{,}24\\), also <strong>abhängig</strong>."
+   ]
+  ],
+  "fehler": null
+ },
+ {
+  "block": "A6",
+  "kennung": "A6 V1",
+  "titel": "Empirische Kenngrößen",
+  "be": 6,
+  "kontext": "Gegeben ist die Urliste 2; 4; 5; 6; 8.",
+  "teile": [
+   [
+    "a",
+    "Berechne Mittelwert, empirische Varianz und empirische Standardabweichung.",
+    3
+   ],
+   [
+    "b",
+    "Welcher Anteil der Werte liegt im Intervall \\([\\bar x-s;\\;\\bar x+s]\\)?",
+    1
+   ],
+   [
+    "c",
+    "Alle Werte werden um 10 erhöht. Gib Mittelwert und Standardabweichung der neuen Liste an und begründe kurz.",
+    2
+   ]
+  ],
+  "weg": "Hier wird die empirische Varianz mit Divisor \\(n\\) verwendet (nicht \\(n-1\\)).\n  Teil c) prüft das Grundverständnis: Verschieben bewegt den Mittelwert mit, lässt die Streuung aber in Ruhe.",
+  "loesung": [
+   [
+    "a",
+    "\\[\\bar x=\\frac{2+4+5+6+8}{5}=\\frac{25}{5}=5.\\]\n   Abweichungen: \\(-3,\\,-1,\\,0,\\,1,\\,3\\); Quadrate: \\(9,\\,1,\\,0,\\,1,\\,9\\).\n   \\[v=\\frac{9+1+0+1+9}{5}=\\frac{20}{5}=4,\\qquad s=\\sqrt4=2.\\]"
+   ],
+   [
+    "b",
+    "Intervall \\([5-2;\\;5+2]=[3;\\,7]\\). Darin liegen 4, 5 und 6 — also 3 von 5 Werten:\n   \\[\\frac{3}{5}=60\\,\\%.\\]"
+   ],
+   [
+    "c",
+    "\\[\\bar x_{\\text{neu}}=15,\\qquad s_{\\text{neu}}=2.\\]\n   <strong>Begründung:</strong> Wird jeder Wert um 10 erhöht, wächst auch der Mittelwert um 10.\n   Die Abstände \\(x_i-\\bar x\\) bleiben dabei unverändert — und nur die gehen in die Varianz ein.\n   Deshalb ändert sich die Streuung nicht."
+   ]
+  ],
+  "fehler": "Die Wurzel am Schluss vergessen und \\(v\\) und \\(s\\) gleichsetzen."
+ },
+ {
+  "block": "A6",
+  "kennung": "A6 V3",
+  "titel": "Gleicher Mittelwert, verschiedene Streuung",
+  "be": 6,
+  "kontext": "Gegeben sind die Messreihen \\(A\\): 2; 2; 6; 6 und \\(B\\): 0; 4; 4; 8.\n  Verwende für die empirische Varianz den Divisor \\(n\\).",
+  "teile": [
+   [
+    "a",
+    "Berechne Mittelwert, empirische Varianz und Standardabweichung von \\(A\\).",
+    3
+   ],
+   [
+    "b",
+    "Berechne Mittelwert und Varianz von \\(B\\) und vergleiche die Streuung der Messreihen.",
+    2
+   ],
+   [
+    "c",
+    "Beurteile die Aussage: „Bei gleichem Mittelwert müssen auch die Standardabweichungen gleich sein.“",
+    1
+   ]
+  ],
+  "weg": "Die beiden Reihen sind mit Absicht so gebaut, dass sie denselben Mittelwert haben.\n  Sie sind damit ein fertiges <strong>Gegenbeispiel</strong> für die Behauptung in c).",
+  "loesung": [
+   [
+    "a",
+    "\\[\\bar x_A=\\frac{2+2+6+6}{4}=4.\\]\n   Abweichungen: \\(-2,\\,-2,\\,2,\\,2\\); Quadrate je 4.\n   \\[v_A=\\frac{4+4+4+4}{4}=4,\\qquad s_A=2.\\]"
+   ],
+   [
+    "b",
+    "\\[\\bar x_B=\\frac{0+4+4+8}{4}=4.\\]\n   Abweichungen: \\(-4,\\,0,\\,0,\\,4\\); Quadrate: \\(16,\\,0,\\,0,\\,16\\).\n   \\[v_B=\\frac{32}{4}=8,\\qquad s_B=\\sqrt8=2\\sqrt2\\approx 2{,}83.\\]\n   <strong>Vergleich:</strong> Gleicher Mittelwert 4, aber \\(s_B>s_A\\). Die Reihe \\(B\\) streut stärker\n   — ihre Werte liegen weiter vom Mittelwert entfernt."
+   ],
+   [
+    "c",
+    "Die Aussage ist <strong>falsch</strong>. \\(A\\) und \\(B\\) haben denselben Mittelwert 4,\n   aber verschiedene Standardabweichungen (2 gegen \\(2\\sqrt2\\)).\n   Mittelwert und Streuung beschreiben zwei verschiedene Eigenschaften einer Datenreihe:\n   der eine die Lage, die andere die Breite."
+   ]
+  ],
+  "fehler": null
+ },
+ {
+  "block": "A6",
+  "kennung": "A6 V4",
+  "titel": "Fehlender Messwert und lineare Umrechnung",
+  "be": 6,
+  "kontext": "Die Messreihe 2; 4; 6; \\(k\\) besitzt den Mittelwert 5. Für die Varianz wird durch \\(n\\) geteilt.",
+  "teile": [
+   [
+    "a",
+    "Bestimme \\(k\\).",
+    1
+   ],
+   [
+    "b",
+    "Berechne die empirische Varianz und Standardabweichung der vollständigen Messreihe.",
+    3
+   ],
+   [
+    "c",
+    "Jeder Messwert \\(x\\) wird durch \\(y=1-2x\\) ersetzt. Bestimme den neuen Mittelwert und die neue Standardabweichung. Begründe ohne erneute Berechnung aller Abweichungsquadrate.",
+    2
+   ]
+  ],
+  "weg": "Teil c) ist die allgemeine Regel hinter A6 V1 c): Bei \\(y=mx+b\\) gilt\n  \\(\\bar y=m\\bar x+b\\) und \\(s_y=|m|\\cdot s_x\\). Der <strong>Betrag</strong> ist wichtig —\n  eine Standardabweichung kann nie negativ sein.",
+  "loesung": [
+   [
+    "a",
+    "\\[\\bar x=\\frac{2+4+6+k}{4}=5\\;\\Rightarrow\\;12+k=20\\;\\Rightarrow\\;k=8.\\]"
+   ],
+   [
+    "b",
+    "Messreihe 2; 4; 6; 8 mit \\(\\bar x=5\\).\n   Abweichungen: \\(-3,\\,-1,\\,1,\\,3\\); Quadrate: \\(9,\\,1,\\,1,\\,9\\).\n   \\[v=\\frac{9+1+1+9}{4}=\\frac{20}{4}=5,\\qquad s=\\sqrt5\\approx 2{,}24.\\]"
+   ],
+   [
+    "c",
+    "\\[\\bar y=1-2\\cdot 5=-9.\\]\n   \\[s_y=|-2|\\cdot s_x=2\\sqrt5\\approx 4{,}47.\\]\n   <strong>Begründung:</strong> Die Verschiebung um \\(+1\\) bewegt alle Werte und den Mittelwert\n   gleich weit, ändert also keine Abweichung. Der Faktor \\(-2\\) verdoppelt jede Abweichung\n   dem Betrag nach; das Vorzeichen spiegelt nur die Reihenfolge und fällt beim Quadrieren weg."
+   ]
+  ],
+  "fehler": "In c) \\(s_y=-2\\sqrt5\\) angeben. Eine Standardabweichung ist immer \\(\\ge 0\\)."
+ },
+ {
+  "block": "A7",
+  "kennung": "A7 V1",
+  "titel": "Simulation beschreiben",
+  "be": 6,
+  "kontext": "Eine Basketballspielerin trifft beim Freiwurf mit der Wahrscheinlichkeit 75 %. Die zehn Würfe\n  werden als unabhängig betrachtet, die Trefferwahrscheinlichkeit ist bei jedem Wurf gleich.\n  Gesucht ist die Wahrscheinlichkeit, bei zehn Würfen mindestens acht Treffer zu erzielen.",
+  "teile": [
+   [
+    "a",
+    "Beschreibe eine Simulation mit einem Zufallszahlengenerator, mit der man diese Wahrscheinlichkeit schätzen kann. Nenne Zufallsgerät, Zuordnung, einen Durchgang und die Auswertung.",
+    4
+   ],
+   [
+    "b",
+    "Erkläre, warum ein normaler Spielwürfel für 75 % nicht direkt geeignet ist, und wie man ihn trotzdem nutzen könnte.",
+    2
+   ]
+  ],
+  "weg": "Jede Simulationsbeschreibung besteht aus denselben <strong>vier Zeilen</strong>:\n  Zufallsgerät — Zuordnung — ein Durchgang — Wiederholung und Auswertung.\n  Wichtig ist der Unterschied zwischen einem <em>Durchgang</em> (hier: 10 Würfe) und einer\n  <em>Wiederholung</em> (der ganze Durchgang noch einmal).",
+  "loesung": [
+   [
+    "a",
+    "<strong>1. Zufallsgerät.</strong> Gleichverteilte ganze Zufallszahlen von 1 bis 4\n   (am WTR z. B. <code>RanInt#(1,4)</code>), unabhängig erzeugt.<br>\n   <strong>2. Zuordnung.</strong> 1, 2, 3 bedeuten „Treffer“, 4 bedeutet „daneben“.\n   Damit ist die Trefferwahrscheinlichkeit \\(\\tfrac34=75\\,\\%\\).<br>\n   <strong>3. Ein Durchgang.</strong> Zehn Zufallszahlen erzeugen und die Treffer zählen.\n   Ein Durchgang entspricht einer Serie von zehn Freiwürfen.<br>\n   <strong>4. Wiederholung und Auswertung.</strong> Viele Durchgänge, z. B. 100.\n   Zählen, in wie vielen Durchgängen mindestens 8 Treffer auftraten.\n   Der Schätzwert ist\n   \\[\\hat p=\\frac{\\text{Anzahl der Durchgänge mit mindestens 8 Treffern}}{\\text{Anzahl aller Durchgänge}}.\\]"
+   ],
+   [
+    "b",
+    "Ein Würfel liefert sechs gleich wahrscheinliche Ergebnisse. Jede damit direkt\n   darstellbare Wahrscheinlichkeit hat die Form \\(\\tfrac k6\\). Aber\n   \\[\\tfrac34\\neq\\tfrac k6\\quad\\text{für jedes ganze }k,\\]\n   denn \\(\\tfrac34\\cdot 6=4{,}5\\) ist keine ganze Zahl.<br>\n   <strong>Weg 1 (Verwerfen).</strong> Würfeln; bei 5 oder 6 wird der Wurf verworfen und neu gewürfelt.\n   Von den verbleibenden Zahlen 1 bis 4 zählen 1, 2, 3 als Treffer — das ergibt genau \\(\\tfrac34\\).<br>\n   <strong>Weg 2 (zwei Würfe).</strong> Zweimal würfeln und nur auf gerade/ungerade achten.\n   Die vier Kombinationen gg, gu, ug, uu haben je die Wahrscheinlichkeit \\(\\tfrac14\\).\n   Man erklärt gg zum Fehlwurf und die anderen drei zum Treffer."
+   ]
+  ],
+  "fehler": "Einen Durchgang mit einer Wiederholung verwechseln: „10 Durchgänge“ statt „ein Durchgang aus 10 Zahlen“."
+ },
+ {
+  "block": "A7",
+  "kennung": "A7 V2",
+  "titel": "Simulation beschreiben und auswerten",
+  "be": 6,
+  "kontext": "In einem Kurs sind 25 Personen. Gesucht ist die Wahrscheinlichkeit, dass mindestens zwei am\n  selben Tag Geburtstag haben. Modellannahme: 365 Tage, jeder Tag gleich wahrscheinlich,\n  die Geburtstage sind voneinander unabhängig.",
+  "teile": [
+   [
+    "a",
+    "Beschreibe eine Simulation mit einem Zufallszahlengenerator, mit der man diese Wahrscheinlichkeit schätzen kann.",
+    4
+   ],
+   [
+    "b",
+    "Eine Simulation mit 100 Durchgängen lieferte 54 Durchgänge mit mindestens einem doppelten Geburtstag. Gib den Schätzwert an und erläutere, was sich mit 1000 Durchgängen ändert und was nicht.",
+    2
+   ]
+  ],
+  "weg": "Klassisches Geburtstagsproblem. Auch hier gilt das Vier-Zeilen-Schema.\n  Teil b) prüft, ob man versteht, was mehr Durchgänge bewirken — und was nicht.",
+  "loesung": [
+   [
+    "a",
+    "<strong>1. Zufallsgerät.</strong> Gleichverteilte ganze Zufallszahlen von 1 bis 365,\n   unabhängig erzeugt. Jede Zahl steht für einen Kalendertag.<br>\n   <strong>2. Zuordnung.</strong> Eine Zufallszahl ist der Geburtstag einer Person.<br>\n   <strong>3. Ein Durchgang.</strong> 25 Zufallszahlen erzeugen (ein Kurs).\n   Der Durchgang gilt als <em>Treffer</em>, wenn mindestens eine Zahl mindestens zweimal vorkommt.<br>\n   <strong>4. Wiederholung und Auswertung.</strong> Viele Durchgänge, den Anteil der Treffer bilden."
+   ],
+   [
+    "b",
+    "\\[\\hat p=\\frac{54}{100}=0{,}54.\\]\n   <strong>Was sich ändert:</strong> Mit 1000 Durchgängen wird die typische Schwankung des\n   Schätzwerts kleiner. Wiederholt man die Simulation mehrfach, liegen die Ergebnisse enger beieinander.<br>\n   <strong>Was sich nicht ändert:</strong> Es ist nicht garantiert, dass eine einzelne neue Schätzung\n   näher am wahren Wert liegt. Eine Simulation bleibt zufällig. Der exakte Wert beträgt\n   \\[p=1-\\frac{365}{365}\\cdot\\frac{364}{365}\\cdot\\ldots\\cdot\\frac{341}{365}\\approx 0{,}569.\\]"
+   ]
+  ],
+  "fehler": "„Doppelt“ zu eng lesen. Auch drei gleiche Geburtstage sind ein Treffer — deshalb „mindestens zweimal“."
+ },
+ {
+  "block": "A7",
+  "kennung": "A7 V3",
+  "titel": "Eine Simulation passend auswerten",
+  "be": 6,
+  "kontext": "Ein elektronisches Bauteil ist mit Wahrscheinlichkeit 0,3 defekt. Die Zustände verschiedener\n  Bauteile werden als unabhängig modelliert. Gesucht ist die Wahrscheinlichkeit, dass in einer\n  Gruppe aus vier Bauteilen mindestens eines defekt ist.",
+  "teile": [
+   [
+    "a",
+    "Beschreibe eine passende Simulation mit gleichverteilten ganzzahligen Zufallszahlen. Lege Zuordnung, einen Durchgang und die Auswertung fest.",
+    3
+   ],
+   [
+    "b",
+    "Gib einen Term für die exakte Wahrscheinlichkeit an; berechne keinen Dezimalwert.",
+    1
+   ],
+   [
+    "c",
+    "Ein Schüler simuliert 1000 einzelne Bauteile und verwendet den Anteil defekter Bauteile als Antwort auf die Frage. Erläutere seinen Fehler und korrigiere die Auswertung.",
+    2
+   ]
+  ],
+  "weg": "Der Kern der Aufgabe steckt in c): Der Schüler schätzt eine richtige Zahl —\n  nur leider die falsche. Er schätzt \\(P(\\text{Bauteil defekt})=0{,}3\\), gefragt war aber\n  eine Aussage über <strong>Vierergruppen</strong>.",
+  "loesung": [
+   [
+    "a",
+    "<strong>Zufallsgerät und Zuordnung.</strong> Zahlen 1 bis 10, unabhängig erzeugt.\n   1, 2, 3 bedeuten „defekt“ (das sind \\(\\tfrac{3}{10}=0{,}3\\)), 4 bis 10 „in Ordnung“.<br>\n   <strong>Ein Durchgang.</strong> Vier Zufallszahlen — eine Vierergruppe.\n   Treffer, wenn mindestens eine Zahl aus \\(\\{1;2;3\\}\\) dabei ist.<br>\n   <strong>Auswertung.</strong> Viele Durchgänge, Schätzwert\n   \\(\\hat p=\\dfrac{\\text{Trefferzahl}}{\\text{Anzahl der Durchgänge}}\\)."
+   ],
+   [
+    "b",
+    "Über das Gegenereignis „kein Bauteil defekt“:\n   \\[P(\\text{mindestens eines defekt})=1-0{,}7^4.\\]"
+   ],
+   [
+    "c",
+    "<strong>Der Fehler.</strong> Der Anteil defekter Einzelteile unter 1000 Bauteilen schätzt\n   \\(P(\\text{ein Bauteil ist defekt})=0{,}3\\). Gefragt war aber die Wahrscheinlichkeit, dass in einer\n   <em>Gruppe aus vier</em> Bauteilen mindestens eines defekt ist — ein Ereignis auf der Ebene der Gruppe,\n   nicht des Einzelteils.<br>\n   <strong>Korrektur.</strong> Seine 1000 Zahlen sind nicht verloren: Er fasst sie zu 250 Vierergruppen\n   zusammen und zählt, in wie vielen Gruppen mindestens ein defektes Teil vorkommt.\n   Der Anteil dieser Gruppen an den 250 ist der gesuchte Schätzwert (rund 0,76)."
+   ]
+  ],
+  "fehler": null
+ },
+ {
+  "block": "A7",
+  "kennung": "A7 V4",
+  "titel": "Ziehen ohne Zurücklegen simulieren",
+  "be": 6,
+  "kontext": "Eine Urne enthält drei rote und zwei blaue Kugeln. Zwei Kugeln werden zufällig ohne Zurücklegen\n  gezogen. Gesucht ist die Wahrscheinlichkeit für zwei rote Kugeln.",
+  "teile": [
+   [
+    "a",
+    "Beschreibe eine Simulation mit gleichverteilten ganzzahligen Zufallszahlen, die das Ziehen ohne Zurücklegen korrekt nachbildet.",
+    4
+   ],
+   [
+    "b",
+    "Ein Schüler erzeugt pro Durchgang zwei unabhängige Zahlen aus 1 bis 5 und wertet 1, 2 und 3 als rot. Erkläre, welches andere Experiment er simuliert, und berechne die korrekte Wahrscheinlichkeit für die ursprüngliche Aufgabe.",
+    2
+   ]
+  ],
+  "weg": "Der entscheidende Punkt: Ein Zufallszahlengenerator zieht immer <em>mit</em> Zurücklegen.\n  „Ohne Zurücklegen“ muss man von Hand erzwingen — indem man dieselbe <strong>Kugelnummer</strong>\n  ausschließt. Nicht dieselbe Farbe! Zwei rote Kugeln nacheinander sind ja gerade erlaubt.",
+  "loesung": [
+   [
+    "a",
+    "<strong>Kennzeichnung.</strong> Die fünf Kugeln einzeln nummerieren:\n   1, 2, 3 sind die roten, 4 und 5 die blauen.<br>\n   <strong>Erste Ziehung.</strong> Eine Zufallszahl aus 1 bis 5.<br>\n   <strong>Zweite Ziehung.</strong> Wieder eine Zufallszahl aus 1 bis 5. Ist es dieselbe\n   <em>Nummer</em> wie eben, wird sie verworfen und neu gezogen — solange, bis eine andere Nummer erscheint.\n   Damit ist die erste Kugel wirklich aus der Urne.<br>\n   <strong>Treffer und Auswertung.</strong> Ein Durchgang besteht aus zwei verschiedenen Nummern.\n   Treffer, wenn beide höchstens 3 sind. Viele Durchgänge, Anteil der Treffer bilden."
+   ],
+   [
+    "b",
+    "<strong>Was er simuliert.</strong> Ohne den Ausschluss kann dieselbe Kugel zweimal kommen.\n   Er simuliert also Ziehen <strong>mit</strong> Zurücklegen, mit der Wahrscheinlichkeit\n   \\[\\left(\\tfrac35\\right)^2=\\tfrac{9}{25}=0{,}36.\\]\n   <strong>Richtiger Wert.</strong> Ohne Zurücklegen ändert sich die Urne nach der ersten Ziehung:\n   \\[P(\\text{zwei rote})=\\frac35\\cdot\\frac24=\\frac{6}{20}=\\frac{3}{10}=0{,}3.\\]"
+   ]
+  ],
+  "fehler": "Dieselbe <em>Farbe</em> statt derselben <em>Nummer</em> ausschließen. Dann wäre „zwei rote“ unmöglich."
+ },
+ {
+  "block": "A8",
+  "kennung": "A8 V1",
+  "titel": "Ereignisse verknüpfen",
+  "be": 5,
+  "kontext": "Ein fairer Würfel wird einmal geworfen, \\(\\Omega=\\{1;2;3;4;5;6\\}\\).\n  \\(E\\): „gerade Augenzahl“, \\(F\\): „Augenzahl größer als 3“, \\(G\\): „Primzahl“.",
+  "teile": [
+   [
+    "a",
+    "Gib \\(E\\cap F\\), \\(E\\cup G\\) und \\(E\\setminus F\\) als Mengen an.",
+    2
+   ],
+   [
+    "b",
+    "Beschreibe das Ereignis \\(\\bar F\\cap G\\) in Worten und berechne seine Wahrscheinlichkeit.",
+    2
+   ],
+   [
+    "c",
+    "Berechne \\(P(E\\cup F)\\) mit dem Additionssatz.",
+    1
+   ]
+  ],
+  "weg": "Erst die drei Mengen konkret hinschreiben, dann wird alles Weitere zum Abzählen:\n  \\(E=\\{2;4;6\\}\\), \\(F=\\{4;5;6\\}\\), \\(G=\\{2;3;5\\}\\).",
+  "loesung": [
+   [
+    "a",
+    "\\[E\\cap F=\\{4;6\\}\\quad\\text{(gerade und größer als 3)}\\]\n   \\[E\\cup G=\\{2;3;4;5;6\\}\\quad\\text{(gerade oder prim)}\\]\n   \\[E\\setminus F=\\{2\\}\\quad\\text{(gerade, aber nicht größer als 3)}\\]"
+   ],
+   [
+    "b",
+    "\\(\\bar F=\\{1;2;3\\}\\) sind die Augenzahlen höchstens 3. Also\n   \\[\\bar F\\cap G=\\{2;3\\}.\\]\n   <strong>In Worten:</strong> „Die Augenzahl ist eine Primzahl, die höchstens 3 ist.“\n   \\[P(\\bar F\\cap G)=\\frac{2}{6}=\\frac13.\\]"
+   ],
+   [
+    "c",
+    "\\[P(E\\cup F)=P(E)+P(F)-P(E\\cap F)=\\frac36+\\frac36-\\frac26=\\frac46=\\frac23.\\]\n   Der Abzug ist nötig, weil 4 und 6 sonst doppelt gezählt würden."
+   ]
+  ],
+  "fehler": "Bei \\(E\\setminus F\\) die Reihenfolge verwechseln: \\(F\\setminus E=\\{5\\}\\) ist etwas anderes."
+ },
+ {
+  "block": "A8",
+  "kennung": "A8 V2",
+  "titel": "Ereignisse verknüpfen und darstellen",
+  "be": 5,
+  "kontext": "Aus acht Karten mit den Zahlen 1 bis 8 wird eine gezogen, jede Karte mit derselben\n  Wahrscheinlichkeit. \\(E=\\{1;2;3;4\\}\\), \\(F=\\{2;4;6;8\\}\\), \\(G=\\{3;4;5\\}\\).",
+  "teile": [
+   [
+    "a",
+    "Gib alle Elemente an von (1) \\(E\\cup F\\), (2) \\(E\\cap(F\\cup G)\\), (3) \\(E\\setminus(F\\cup G)\\).",
+    2
+   ],
+   [
+    "b",
+    "Stelle die Mengen \\(\\{4\\}\\) und \\(\\{6;8\\}\\) mit \\(E\\), \\(F\\), \\(G\\) und den Zeichen \\(\\cup\\), \\(\\cap\\), \\(\\setminus\\) dar.",
+    2
+   ],
+   [
+    "c",
+    "Berechne \\(P(E\\cup F)\\).",
+    1
+   ]
+  ],
+  "weg": "Teil b) geht in die umgekehrte Richtung: nicht Mengen ausrechnen, sondern einen\n  passenden Ausdruck <em>konstruieren</em>. Dabei sind mehrere richtige Antworten möglich.",
+  "loesung": [
+   [
+    "a",
+    "Zuerst \\(F\\cup G=\\{2;3;4;5;6;8\\}\\).\n   \\[(1)\\;E\\cup F=\\{1;2;3;4;6;8\\}\\]\n   \\[(2)\\;E\\cap(F\\cup G)=\\{2;3;4\\}\\]\n   \\[(3)\\;E\\setminus(F\\cup G)=\\{1\\}\\]"
+   ],
+   [
+    "b",
+    "\\[\\{4\\}=E\\cap F\\cap G\\]\n   Die 4 ist die einzige Zahl, die in allen drei Mengen vorkommt.\n   Gleichwertig ist auch \\(F\\cap G\\), denn \\(F\\cap G=\\{4\\}\\) bereits allein.\n   \\[\\{6;8\\}=F\\setminus E\\]\n   Die geraden Zahlen, die nicht zu \\(E\\) gehören."
+   ],
+   [
+    "c",
+    "\\(E\\cup F\\) hat 6 Elemente:\n   \\[P(E\\cup F)=\\frac68=\\frac34.\\]"
+   ]
+  ],
+  "fehler": null
+ },
+ {
+  "block": "A8",
+  "kennung": "A8 V3",
+  "titel": "Teilbarkeit und Ereignismengen",
+  "be": 5,
+  "kontext": "Aus zwölf Karten mit den Zahlen 1 bis 12 wird eine zufällig gezogen; jede Karte ist gleich\n  wahrscheinlich. \\(E\\): „Die Zahl ist gerade“, \\(F\\): „Die Zahl ist durch 3 teilbar“,\n  \\(G\\): „Die Zahl ist größer als 8“.",
+  "teile": [
+   [
+    "a",
+    "Gib \\(E\\cap F\\) und \\(E\\setminus(F\\cup G)\\) als Mengen an.",
+    2
+   ],
+   [
+    "b",
+    "Bestimme die Wahrscheinlichkeit, dass genau eines der Ereignisse \\(E\\) und \\(F\\) eintritt. Gib die zugehörige Ergebnismenge an.",
+    2
+   ],
+   [
+    "c",
+    "Beschreibe \\(\\bar E\\cap\\bar F\\) in Worten.",
+    1
+   ]
+  ],
+  "weg": "Das Wort <strong>„genau eines“</strong> ist der Knackpunkt: gemeint ist\n  \\((E\\setminus F)\\cup(F\\setminus E)\\) — das eine ohne das andere, in beide Richtungen.\n  Das ist <em>nicht</em> \\(E\\cup F\\) (da wäre der Schnitt dabei).",
+  "loesung": [
+   [
+    "a",
+    "Die Mengen: \\(E=\\{2;4;6;8;10;12\\}\\), \\(F=\\{3;6;9;12\\}\\), \\(G=\\{9;10;11;12\\}\\).\n   \\[E\\cap F=\\{6;12\\}\\]\n   \\(F\\cup G=\\{3;6;9;10;11;12\\}\\), also\n   \\[E\\setminus(F\\cup G)=\\{2;4;8\\}.\\]"
+   ],
+   [
+    "b",
+    "„Genau eines“ bedeutet \\((E\\setminus F)\\cup(F\\setminus E)\\):\n   \\[E\\setminus F=\\{2;4;8;10\\},\\qquad F\\setminus E=\\{3;9\\}.\\]\n   \\[\\text{Ergebnismenge}=\\{2;3;4;8;9;10\\},\\qquad P=\\frac{6}{12}=\\frac12.\\]"
+   ],
+   [
+    "c",
+    "\\(\\bar E\\cap\\bar F\\) heißt: weder gerade noch durch 3 teilbar.\n   <strong>In Worten:</strong> „Die gezogene Zahl ist weder durch 2 noch durch 3 teilbar.“\n   Konkret sind das \\(\\{1;5;7;11\\}\\)."
+   ]
+  ],
+  "fehler": "„Genau eines“ als \\(E\\cup F\\) lesen. Dann kämen 6 und 12 fälschlich dazu."
+ }
+]
