@@ -523,6 +523,341 @@ A("A8", "A8 V3", "Teilbarkeit und Ereignismengen", 5,
    Konkret sind das \(\{1;5;7;11\}\).""")],
   r"„Genau eines“ als \(E\cup F\) lesen. Dann kämen 6 und 12 fälschlich dazu."),
 
+# ═══════════════════════════════════════════ B1 · Geometrie im Sachzusammenhang
+A("B1", "B1 V1", "Festzelt", 32,
+  r"""Ein Festzelt hat eine quadratische Grundfläche mit den Eckpunkten \(A(0|0|0)\), \(B(8|0|0)\),
+  \(C(8|8|0)\) und \(D(0|8|0)\). Die Spitze liegt bei \(S(4|4|3)\). Die vier Dachflächen sind die
+  Dreiecke \(ABS\), \(BCS\), \(CDS\) und \(DAS\). Eine Längeneinheit entspricht 1 m.
+  \(M(4|4|0)\) ist der Mittelpunkt des Bodens.""",
+  [("a", r"Bestimme eine Gleichung der Ebene \(E\), in der die Dachfläche \(ABS\) liegt, in Parameterform und in Koordinatenform.", 5),
+   ("b", r"Zur Kontrolle: \(E:\;3x_2-4x_3=0\). Zeige, dass die Dachfläche \(BCS\) in der Ebene \(F:\;3x_1+4x_3=24\) liegt.", 2),
+   ("c", r"Berechne den Abstand des Bodenmittelpunkts \(M\) zur Ebene \(E\). Bestimme die Höhe \(h\) eines Punktes \(P_h(4|4|h)\) auf der Mittelachse innerhalb des Zeltes, der von \(E\) den Abstand 1 m hat.", 6),
+   ("d", r"Eine Lichterkette ist geradlinig vom Bodenpunkt \(Q(-2|4|0)\) zum Punkt \(R(4|4|8)\) an einem Mast gespannt. Berechne den Abstand der Zeltspitze \(S\) zur Lichterkette.", 6),
+   ("e", r"Eine zusätzliche Plane soll auf der dem Zeltinneren abgewandten Seite parallel zu \(E\) angebracht werden, ihr senkrechter Abstand zu \(E\) beträgt 1 m. Gib eine Koordinatengleichung ihrer Ebene an und begründe die Wahl des Vorzeichens.", 4),
+   ("f", r"Bestimme den Lotfußpunkt von \(M\) auf \(E\) und zeige, dass er innerhalb des Dreiecks \(ABS\) liegt. Erläutere, was dieser Punkt praktisch bedeutet.", 5),
+   ("g", r"Untersuche, ob die Lichterkette die Dachfläche \(ABS\) berührt. Unterscheide dabei zwischen der Dachfläche und ihrer Trägerebene \(E\).", 4)],
+  r"""Die Aufgabe dreht sich um einen einzigen Unterschied: <strong>Ebene gegen Dreieck</strong> und
+  <strong>Gerade gegen Strecke</strong>. Die Ebene \(E\) ist unendlich groß, die Dachfläche \(ABS\) ist nur
+  ein Dreieck darin. Ebenso ist die Lichterkette nur ein Stück der Geraden durch \(Q\) und \(R\).
+  In c), d), f) und g) muss deshalb jedes Mal geprüft werden, ob der berechnete Punkt auch wirklich
+  auf dem Bauteil liegt. Das Werkzeug dafür ist die Parameterform: Im Dreieck \(ABS\) gilt
+  \(r\ge 0\), \(s\ge 0\) und \(r+s\le 1\).""",
+  [("a", r"""<strong>Parameterform.</strong> Stützpunkt \(A\) ist der Ursprung, die Spannvektoren sind
+   \(\vec{AB}\) und \(\vec{AS}\):
+   \[E:\;\vec x=r\cdot""" + V("8","0","0") + r"""+s\cdot""" + V("4","4","3") + r""",\qquad r,s\in\mathbb R.\]
+   Das Dreieck \(ABS\) entspricht darin \(r\ge 0,\;s\ge 0,\;r+s\le 1\).<br>
+   <strong>Normalenvektor.</strong>
+   \[\vec{AB}\times\vec{AS}=""" + V("0\\cdot 3-0\\cdot 4","0\\cdot 4-8\\cdot 3","8\\cdot 4-0\\cdot 4") + r"""
+   =""" + V("0","-24","32") + r"""\;\parallel\;""" + V("0","-3","4") + r""".\]
+   <strong>Koordinatenform.</strong> Ansatz \(-3x_2+4x_3=c\); \(A\) einsetzen liefert \(c=0\).
+   Mit \(-1\) multipliziert:
+   \[E:\;3x_2-4x_3=0.\]
+   Probe: \(A\to 0\), \(B\to 0\), \(S\to 12-12=0\). \(\checkmark\)"""),
+   ("b", r"""Es genügt, die drei Eckpunkte einzusetzen:
+   \[B:\;3\cdot 8+4\cdot 0=24,\qquad C:\;3\cdot 8+4\cdot 0=24,\qquad S:\;3\cdot 4+4\cdot 3=12+12=24.\]
+   Alle drei erfüllen \(F\). Weil \(B\), \(C\) und \(S\) nicht auf einer Geraden liegen, spannen sie
+   die Ebene auf — also liegt das ganze Dreieck \(BCS\) in \(F\)."""),
+   ("c", r"""<strong>Abstand von \(M\).</strong> \(|\vec n|=\sqrt{0+9+16}=5\), HNF \(\dfrac{3x_2-4x_3}{5}=0\):
+   \[d(M,E)=\frac{|3\cdot 4-4\cdot 0|}{5}=\frac{12}{5}=2{,}4\;\text{m}.\]
+   <strong>Höhe \(h\).</strong> Für \(P_h(4|4|h)\):
+   \[\frac{|3\cdot 4-4h|}{5}=1\quad\Longleftrightarrow\quad |12-4h|=5.\]
+   Das gibt zwei Lösungen:
+   \[12-4h=5\;\Rightarrow\;h=1{,}75,\qquad 12-4h=-5\;\Rightarrow\;h=4{,}25.\]
+   Die Mittelachse reicht im Zelt aber nur vom Boden bis zur Spitze, also \(0\le h\le 3\).
+   Damit bleibt
+   \[h=1{,}75\;\text{m}.\]
+   (\(h=4{,}25\) läge über der Zeltspitze und scheidet aus.)"""),
+   ("d", r"""<strong>Richtungsvektor und Parameterbereich.</strong>
+   \[\vec{QR}=""" + V("6","0","8") + r"""\;\parallel\;\vec u=""" + V("3","0","4") + r""",\qquad |\vec u|=5.\]
+   Mit \(\vec x=\vec{OQ}+s\,\vec u\) gehört die Lichterkette zu \(0\le s\le 2\) (bei \(s=2\) ist \(R\) erreicht).<br>
+   <strong>Hilfsebene durch \(S\), senkrecht zur Lichterkette.</strong>
+   \[H:\;3x_1+4x_3=3\cdot 4+4\cdot 3=24.\]
+   <strong>Einsetzen.</strong> Ein Kettenpunkt ist \((-2+3s\,|\,4\,|\,4s)\):
+   \[3(-2+3s)+4\cdot 4s=-6+9s+16s=-6+25s=24\;\Rightarrow\;s=1{,}2.\]
+   \(1{,}2\) liegt in \([0;2]\) — der Lotfußpunkt gehört also wirklich zur Kette und nicht zur
+   Verlängerung.<br>
+   <strong>Fußpunkt und Abstand.</strong>
+   \[F(1{,}6\,|\,4\,|\,4{,}8),\qquad \vec{SF}=""" + V("-2{,}4","0","1{,}8") + r""",\]
+   \[d=\sqrt{2{,}4^2+1{,}8^2}=\sqrt{5{,}76+3{,}24}=\sqrt9=3\;\text{m}.\]"""),
+   ("e", r"""Parallele Ebenen haben denselben Normalenvektor: \(3x_2-4x_3=c\). Abstand 1 zu \(E\):
+   \[\frac{|c-0|}{5}=1\;\Rightarrow\;c=5\ \text{oder}\ c=-5.\]
+   <strong>Vorzeichen.</strong> Setzt man den Zeltmittelpunkt \(M(4|4|0)\) in den Term
+   \(3x_2-4x_3\) ein, ergibt sich \(12>0\). Das Zeltinnere liegt also auf der <em>positiven</em> Seite.
+   Gesucht ist die Außenseite, deshalb
+   \[3x_2-4x_3=-5.\]"""),
+   ("f", r"""<strong>Lot von \(M\).</strong>
+   \[\vec x=""" + V("4","4","0") + r"""+t\cdot""" + V("0","3","-4") + r""".\]
+   Einsetzen in \(E\): \(3(4+3t)-4(-4t)=12+9t+16t=12+25t=0\;\Rightarrow\;t=-0{,}48\).
+   \[L(4\,|\,4-1{,}44\,|\,0+1{,}92)=L(4\,|\,2{,}56\,|\,1{,}92).\]
+   <strong>Liegt \(L\) im Dreieck?</strong> Parameterform aus a) ansetzen:
+   \[8r+4s=4,\qquad 4s=2{,}56,\qquad 3s=1{,}92.\]
+   Aus der zweiten Zeile \(s=0{,}64\) (die dritte bestätigt: \(3\cdot 0{,}64=1{,}92\;\checkmark\)),
+   damit \(8r=4-2{,}56=1{,}44\), also \(r=0{,}18\).
+   \[r=0{,}18\ge 0,\quad s=0{,}64\ge 0,\quad r+s=0{,}82\le 1.\]
+   Alle drei Bedingungen sind erfüllt — \(L\) liegt im Dreieck \(ABS\).<br>
+   <strong>Bedeutung.</strong> \(L\) ist der Punkt der Dachplane, den man von der Zeltmitte aus auf
+   kürzestem Weg erreicht. Eine Stütze von \(M\) nach \(L\) stünde senkrecht auf der Plane und wäre
+   mit 2,4 m die kürzest mögliche."""),
+   ("g", r"""<strong>Schnitt mit der Trägerebene.</strong> Kettenpunkt \((-2+3s\,|\,4\,|\,4s)\) in \(E\):
+   \[3\cdot 4-4\cdot 4s=12-16s=0\;\Rightarrow\;s=0{,}75.\]
+   \(0{,}75\in[0;2]\), die Kette erreicht diesen Punkt also tatsächlich:
+   \[K(0{,}25\,|\,4\,|\,3).\]
+   <strong>Liegt \(K\) im Dreieck?</strong>
+   \[8r+4s'=0{,}25,\qquad 4s'=4,\qquad 3s'=3.\]
+   Aus der zweiten und dritten Zeile \(s'=1\); dann \(8r=0{,}25-4=-3{,}75\), also \(r=-0{,}469<0\).
+   Die Bedingung \(r\ge 0\) ist verletzt.<br>
+   <strong>Antwort.</strong> Die Lichterkette <em>durchstößt die Trägerebene \(E\)</em>,
+   berührt die <em>Dachfläche \(ABS\)</em> aber nicht — der Durchstoßpunkt liegt außerhalb des Dreiecks.
+   Anschaulich: Auf Höhe 3 m ist das Dach nur noch die Spitze \(S(4|4|3)\), und \(K\) liegt weit
+   daneben. Über die anderen drei Dachflächen ist damit nichts ausgesagt.""")],
+  r"""In c), d) und g) den Parameterbereich vergessen. Die Rechnung liefert dann Punkte, die zwar in
+  der Ebene bzw. auf der Geraden liegen, aber nicht auf dem Bauteil. Genau darauf zielt die Aufgabe."""),
+
+A("B1", "B1 V2", "Drohne und Solarfläche", 34,
+  r"""Auf einem Gelände ist eine schräg stehende Solarfläche montiert. Sie wird durch das Dreieck mit
+  den Eckpunkten \(A(6|0|0)\), \(B(0|0|6)\) und \(C(3|6|6)\) modelliert. Eine als Punkt modellierte
+  Drohne fliegt für \(t\ge 0\) auf der Geraden
+  \(g:\;\vec x=""" + V("5","1","6") + r"""+t\cdot""" + V("2","2","-1") + r"""\);
+  zum Zeitpunkt \(t=0\) befindet sie sich in \(D(5|1|6)\). Eine Längeneinheit entspricht 1 m.""",
+  [("a", r"Bestimme eine Gleichung der Ebene \(E\) durch \(A\), \(B\) und \(C\) in Parameterform und in Koordinatenform.", 6),
+   ("b", r"Zur Kontrolle: \(E:\;2x_1-x_2+2x_3=12\). Zeige, dass die Drohne parallel zur Ebene \(E\) fliegt, und berechne ihren Abstand zu \(E\).", 5),
+   ("c", r"Bestimme den Lotfußpunkt von \(D\) auf \(E\) und das Spiegelbild \(D'\) von \(D\) an der Ebene \(E\).", 5),
+   ("d", r"Wie nahe kommt die Drohne dem Eckpunkt \(C\)? Bestimme auch den Zeitpunkt und den Punkt der Flugbahn, in dem das geschieht.", 6),
+   ("e", r"Ein Messmast steht senkrecht auf der Solarfläche, seine Achse ist \(h:\;\vec x=" + V("4","0","2") + r"+s\cdot" + V("2","-1","2") + r"\). Zeige, dass \(g\) und \(h\) windschief sind, berechne ihren Abstand und bestimme die beiden Punkte, in denen der Abstand angenommen wird.", 10),
+   ("f", r"Es gilt ein Sicherheitsabstand von 2 m zur Solarfläche. Begründe ohne weitere Rechnung, ob die Drohne ihn auf ihrem Flug unterschreiten kann.", 2)],
+  r"""Der rote Faden: Die Flugbahn ist <strong>parallel</strong> zur Solarfläche. Das merkt man an
+  \(\vec n\cdot\vec u=0\) in b) — und genau daraus folgt am Ende in f) die Antwort ohne jede weitere
+  Rechnung. Teil e) ist der Rechenschwerpunkt: Für zwei <em>Punkte</em> braucht man den Vektorzug
+  mit zwei Orthogonalitätsbedingungen, nicht nur das Spatprodukt.""",
+  [("a", r"""<strong>Spannvektoren.</strong>
+   \[\vec{AB}=""" + V("-6","0","6") + r""",\qquad \vec{AC}=""" + V("-3","6","6") + r""".\]
+   \[E:\;\vec x=""" + V("6","0","0") + r"""+r\cdot""" + V("-6","0","6") + r"""+s\cdot""" + V("-3","6","6") + r""",\qquad r,s\in\mathbb R.\]
+   <strong>Normalenvektor.</strong>
+   \[\vec{AB}\times\vec{AC}=""" + V("0\\cdot 6-6\\cdot 6","6\\cdot(-3)-(-6)\\cdot 6","-36-0") + r"""
+   =""" + V("-36","18","-36") + r"""\;\parallel\;""" + V("2","-1","2") + r""".\]
+   <strong>Koordinatenform.</strong> \(2x_1-x_2+2x_3=c\); \(A(6|0|0)\) liefert \(c=12\):
+   \[E:\;2x_1-x_2+2x_3=12.\]
+   Probe: \(B\to 0-0+12=12\;\checkmark\), \(C\to 6-6+12=12\;\checkmark\)"""),
+   ("b", r"""<strong>Parallelität.</strong>
+   \[\vec n\cdot\vec u=""" + V("2","-1","2") + r"""\cdot""" + V("2","2","-1") + r"""=4-2-2=0.\]
+   Das Skalarprodukt ist null, also steht die Flugrichtung senkrecht auf dem Normalenvektor.
+   Damit verläuft \(g\) parallel zu \(E\) <em>oder</em> liegt in \(E\).<br>
+   <strong>Abstand.</strong> \(|\vec n|=\sqrt{4+1+4}=3\), also
+   \[d(D,E)=\frac{|2\cdot 5-1+2\cdot 6-12|}{3}=\frac{|10-1+12-12|}{3}=\frac93=3\;\text{m}.\]
+   Wegen \(d\neq 0\) liegt \(g\) nicht in \(E\), sondern ist echt parallel.
+   Weil die Bahn parallel verläuft, ist dieser Abstand für <strong>jedes</strong> \(t\) gleich 3 m."""),
+   ("c", r"""<strong>Lotfußpunkt.</strong> Lot durch \(D\) in Richtung \(\vec n\):
+   \[\vec x=""" + V("5","1","6") + r"""+r\cdot""" + V("2","-1","2") + r""".\]
+   Einsetzen in \(E\):
+   \[2(5+2r)-(1-r)+2(6+2r)=10+4r-1+r+12+4r=21+9r=12\;\Rightarrow\;r=-1.\]
+   \[F=""" + V("5","1","6") + r"""-""" + V("2","-1","2") + r"""=""" + V("3","2","4") + r"""\;\Rightarrow\;F(3\,|\,2\,|\,4).\]
+   <strong>Spiegelbild.</strong>
+   \[\vec{OD'}=2\vec{OF}-\vec{OD}=""" + V("6","4","8") + r"""-""" + V("5","1","6") + r"""=""" + V("1","3","2") + r"""
+   \;\Rightarrow\;D'(1\,|\,3\,|\,2).\]
+   Kontrolle: \(F\) ist sogar der Schwerpunkt des Dreiecks,
+   \(\vec{OF}=\tfrac13(\vec{OA}+\vec{OB}+\vec{OC})\) — der Fußpunkt liegt also mitten auf der
+   Solarfläche."""),
+   ("d", r"""Gesucht ist der Abstand des Punktes \(C\) zur Geraden \(g\). Weil auch der Bahnpunkt
+   gefragt ist, nimmt man die Hilfsebene senkrecht zu \(g\) durch \(C\):
+   \[H:\;2x_1+2x_2-x_3=2\cdot 3+2\cdot 6-6=12.\]
+   Bahnpunkt \((5+2t\,|\,1+2t\,|\,6-t)\) einsetzen:
+   \[2(5+2t)+2(1+2t)-(6-t)=10+4t+2+4t-6+t=6+9t=12\;\Rightarrow\;t=\tfrac23.\]
+   \(t=\tfrac23\ge 0\) liegt im betrachteten Flugzeitraum.
+   \[L\left(\tfrac{19}{3}\,\Big|\,\tfrac73\,\Big|\,\tfrac{16}{3}\right).\]
+   \[\vec{CL}=""" + V("\\tfrac{19}{3}-3","\\tfrac73-6","\\tfrac{16}{3}-6") + r"""
+   =""" + V("\\tfrac{10}{3}","-\\tfrac{11}{3}","-\\tfrac23") + r""",\]
+   \[|\vec{CL}|^2=\frac{100+121+4}{9}=\frac{225}{9}=25\;\Rightarrow\;d=5\;\text{m}.\]
+   Die Drohne kommt dem Eckpunkt \(C\) also auf 5 m nahe, zum Zeitpunkt \(t=\tfrac23\)."""),
+   ("e", r"""<strong>Windschief.</strong> Die Richtungen \(""" + V("2","2","-1") + r"""\) und
+   \(""" + V("2","-1","2") + r"""\) sind keine Vielfachen, also nicht parallel.
+   Gleichsetzen der Geradengleichungen:
+   \[5+2t=4+2s,\qquad 1+2t=-s,\qquad 6-t=2+2s.\]
+   Aus den ersten beiden: \(1+2t=2s\) und \(1+2t=-s\), also \(2s=-s\) und damit \(s=0\), \(t=-0{,}5\).
+   Die dritte Zeile verlangt aber \(6+0{,}5=6{,}5=2\) — Widerspruch. Kein Schnittpunkt,
+   also <strong>windschief</strong>.<br>
+   <strong>Abstand.</strong>
+   \[\vec n=\vec u\times\vec v=""" + V("3","-6","-6") + r"""\;\parallel\;""" + V("1","-2","-2") + r""",\qquad |\vec n|=3.\]
+   Mit \(\vec{P_0D}=""" + V("5-4","1-0","6-2") + r"""=""" + V("1","1","4") + r"""\):
+   \[d=\frac{|\vec n\cdot\vec{P_0D}|}{|\vec n|}=\frac{|1-2-8|}{3}=\frac93=3\;\text{m}.\]
+   <strong>Die beiden Punkte.</strong> Allgemeine Punkte \(G(t)\) auf \(g\) und \(H(s)\) auf \(h\),
+   Verbindungsvektor
+   \[\vec w=\vec{OD}+t\vec u-\vec{OP_0}-s\vec v
+   =""" + V("1+2t-2s","1+2t+s","4-t-2s") + r""".\]
+   Die Verbindung muss auf beiden Richtungen senkrecht stehen. Hier ist \(\vec u\cdot\vec v=0\)
+   und \(\vec{P_0D}\cdot\vec u=2+2-4=0\), \(\vec{P_0D}\cdot\vec v=2-1+8=9\). Damit werden die
+   Bedingungen sehr einfach:
+   \[\vec w\cdot\vec u=0+9t=0,\qquad \vec w\cdot\vec v=9-9s=0.\]
+   Also \(t=0\) und \(s=1\):
+   \[G=D(5\,|\,1\,|\,6),\qquad H(6\,|\,-1\,|\,4).\]
+   Probe: \(\vec{GH}=""" + V("1","-2","-2") + r"""\) hat den Betrag 3 und steht senkrecht auf
+   \(\vec u\) und \(\vec v\). \(\checkmark\)<br>
+   <strong>Modellgrenze.</strong> Berechnet wurde der Abstand zur unendlich verlängerten Mastachse.
+   Ob der reale Mast bis \(H\) reicht, lässt sich ohne Angabe seiner Länge nicht sagen."""),
+   ("f", r"""Nein, der Sicherheitsabstand wird nie unterschritten.<br>
+   Aus b) ist bekannt: Die Flugbahn ist parallel zu \(E\) mit dem konstanten Abstand 3 m.
+   Die Solarfläche ist nur ein <em>Teil</em> der Ebene \(E\). Für jeden Punkt \(P\) der Flugbahn gilt
+   deshalb
+   \[d(P,\text{Dreieck }ABC)\;\ge\;d(P,E)=3\;\text{m}\;>\;2\;\text{m}.\]
+   Der Ebenenabstand ist die kleinstmögliche Untergrenze; zum begrenzten Dreieck kann der Abstand
+   nur größer sein.""")],
+  r"""In e) nur eine Orthogonalitätsbedingung aufstellen. Für zwei Unbekannte \(t\) und \(s\)
+  braucht man zwei Gleichungen. Und in b): \(\vec n\cdot\vec u=0\) allein beweist noch nicht
+  „parallel“ — die Gerade könnte auch <em>in</em> der Ebene liegen. Erst der Abstand \(\ne 0\) schließt das aus."""),
+
+# ═══════════════════════════════════════════ B2 · Stochastik im Sachzusammenhang
+A("B2", "B2 V1", "Fahrradverleih", 32,
+  r"""Ein Fahrradverleih an einem Campingplatz hat 40 % E-Bikes (Ereignis \(E\)) und 60 % normale Räder.
+  Bei der Inspektion zeigt sich: Von den E-Bikes haben 10 % einen Bremsdefekt (Ereignis \(D\)),
+  von den normalen Rädern 35 %. Ein Rad wird zufällig aus dem Bestand ausgewählt.""",
+  [("a", r"Zeichne ein Baumdiagramm und stelle die vollständige Vierfeldertafel auf. Berechne \(P(D)\) und \(P_D(E)\). Prüfe, ob \(E\) und \(D\) stochastisch unabhängig sind.", 9),
+   ("b", r"Zur Kontrolle: \(P(D)=0{,}25\). Drei Räder werden nacheinander zufällig mit Zurücklegen ausgewählt, die Ergebnisse sind unabhängig. Berechne die Wahrscheinlichkeit, dass mindestens eines einen Bremsdefekt hat. Aus einem kleinen Bestand von 20 Rädern, von denen 5 defekt sind, werden zwei ohne Zurücklegen ausgewählt. Berechne die Wahrscheinlichkeit, dass beide defekt sind.", 5),
+   ("c", r"Für 20 Ausleihen wurde die Dauer in vollen Stunden notiert: 1 h: 2-mal, 2 h: 5-mal, 3 h: 6-mal, 4 h: 5-mal, 5 h: 2-mal. Zeichne ein Säulendiagramm der relativen Häufigkeiten, berechne Mittelwert und empirische Standardabweichung. Bestimme den Anteil der Werte im Intervall \([\bar x-s;\;\bar x+s]\), vergleiche ihn mit 68 % und erläutere die begrenzte Aussagekraft dieses Vergleichs.", 8),
+   ("d", r"Beschreibe eine Simulation mit einem Zufallszahlengenerator, mit der man die Wahrscheinlichkeit aus b) (mindestens ein defektes von drei Rädern) schätzen kann. Eine Simulation mit 200 Durchgängen ergab 118 Treffer. Vergleiche mit dem exakten Wert.", 5),
+   ("e", r"Der Verleiher wirbt: „E-Bikes sind bei uns sicherer.“ Beurteile die Aussage mit passenden Wahrscheinlichkeiten und benenne, was sie nicht belegt. Nimm dann Stellung zu der Behauptung: „Weil nur 16 % der defekten Räder E-Bikes sind, sind E-Bikes fünfmal so sicher.“", 5)],
+  r"""Die Aufgabe läuft von der Rechnung zur Beurteilung. Zwei Dinge entscheiden über die Punkte:
+  <strong>(1)</strong> Der Unterschied zwischen \(P_E(D)\) und \(P_D(E)\) — gleiche Schnittmenge,
+  verschiedene Bezugsgruppe. <strong>(2)</strong> Die Frage, was Daten überhaupt belegen können.
+  In c) und e) ist die ehrliche Einschränkung Teil der richtigen Antwort.""",
+  [("a", r"""<strong>Baumdiagramm.</strong> Erste Stufe nach Radtyp:
+   \(P(E)=0{,}4\), \(P(\bar E)=0{,}6\). Zweite Stufe nach Defekt:
+   nach \(E\) die Äste \(0{,}1\) und \(0{,}9\), nach \(\bar E\) die Äste \(0{,}35\) und \(0{,}65\).<br>
+   <strong>Pfadregel für die Innenfelder.</strong>
+   \[P(E\cap D)=0{,}4\cdot 0{,}1=0{,}04,\qquad P(\bar E\cap D)=0{,}6\cdot 0{,}35=0{,}21.\]
+   <table class="vft"><tr><th></th><th>\(D\)</th><th>\(\bar D\)</th><th>Summe</th></tr>
+   <tr><th>\(E\)</th><td>0,04</td><td>0,36</td><td>0,40</td></tr>
+   <tr><th>\(\bar E\)</th><td>0,21</td><td>0,39</td><td>0,60</td></tr>
+   <tr><th>Summe</th><td>0,25</td><td>0,75</td><td>1,00</td></tr></table>
+   <strong>Gesuchte Werte.</strong>
+   \[P(D)=0{,}04+0{,}21=0{,}25,\qquad P_D(E)=\frac{P(E\cap D)}{P(D)}=\frac{0{,}04}{0{,}25}=0{,}16.\]
+   <strong>Unabhängigkeit.</strong>
+   \[P(E)\cdot P(D)=0{,}4\cdot 0{,}25=0{,}10\neq 0{,}04=P(E\cap D)\;\Rightarrow\;\textbf{abhängig}.\]"""),
+   ("b", r"""<strong>Drei Räder mit Zurücklegen.</strong> Über das Gegenereignis „keines defekt“:
+   \[P(\text{mindestens eines})=1-0{,}75^3=1-0{,}421875=0{,}578125\approx 0{,}578.\]
+   <strong>Zwei Räder ohne Zurücklegen.</strong> Nach dem ersten defekten Rad sind nur noch
+   4 von 19 defekt:
+   \[P(\text{beide defekt})=\frac{5}{20}\cdot\frac{4}{19}=\frac{20}{380}=\frac{1}{19}\approx 0{,}053.\]"""),
+   ("c", r"""<strong>Säulendiagramm.</strong> Relative Häufigkeiten über den Stunden 1 bis 5:
+   \[h=0{,}10;\;0{,}25;\;0{,}30;\;0{,}25;\;0{,}10.\]
+   Beide Achsen beschriften (x: Dauer in h, y: relative Häufigkeit). Weil die Daten volle Stunden
+   sind, ist ein Säulendiagramm passender als ein Histogramm mit Klassenbreiten.<br>
+   <strong>Kenngrößen.</strong>
+   \[\bar x=1\cdot 0{,}1+2\cdot 0{,}25+3\cdot 0{,}3+4\cdot 0{,}25+5\cdot 0{,}1=3{,}0\;\text{h}.\]
+   Abweichungen vom Mittelwert: \(-2,-1,0,1,2\) mit den Häufigkeiten \(2,5,6,5,2\).
+   Quadrate mal Häufigkeit aufsummieren:
+   \[v=\frac{2\cdot 4+5\cdot 1+6\cdot 0+5\cdot 1+2\cdot 4}{20}=\frac{26}{20}=1{,}3\;\text{h}^2,\]
+   \[s=\sqrt{1{,}3}\approx 1{,}14\;\text{h}.\]
+   <strong>Anteil im \(1\sigma\)-Intervall.</strong> \([3-1{,}14;\;3+1{,}14]=[1{,}86;\;4{,}14]\)
+   enthält die Werte 2 h, 3 h und 4 h, also
+   \[5+6+5=16\ \text{von}\ 20=80\,\%.\]
+   <strong>Vergleich und Einschränkung.</strong> 80 % liegen 12 Prozentpunkte über den 68 %.
+   Daraus folgt aber weder eine Bestätigung noch eine Widerlegung einer Glockenform:
+   Es gibt nur 20 Beobachtungen mit fünf möglichen Werten, der Anteil kann also nur in
+   5-Prozentpunkt-Schritten springen. Die 68-%-Regel ist eine Faustregel <em>für</em>
+   glockenförmige Daten — man kann sie nicht umdrehen und aus einem einzelnen Anteil auf die
+   Verteilungsform schließen."""),
+   ("d", r"""<strong>Simulation.</strong>
+   Zufallsgerät: gleichverteilte ganze Zahlen von 1 bis 4.
+   Zuordnung: die 1 bedeutet „Bremsdefekt“ (das sind \(\tfrac14=25\,\%\)), 2 bis 4 „in Ordnung“.
+   Ein Durchgang: drei Zufallszahlen — drei Räder. Treffer, wenn mindestens eine 1 dabei ist.
+   Auswertung: viele Durchgänge, Schätzwert = Trefferzahl geteilt durch Durchgangszahl.<br>
+   <strong>Vergleich.</strong>
+   \[\hat p=\frac{118}{200}=0{,}59\qquad\text{gegen}\qquad p=0{,}578125.\]
+   Die Abweichung beträgt rund 1,2 Prozentpunkte. Bei nur 200 Durchgängen ist das eine ganz
+   gewöhnliche Zufallsschwankung; die Simulation bestätigt den Rechenwert."""),
+   ("e", r"""<strong>Erste Aussage.</strong> Zu vergleichen sind die Defektquoten <em>innerhalb</em> der
+   beiden Radtypen:
+   \[P_E(D)=0{,}10\qquad\text{gegen}\qquad P_{\bar E}(D)=\frac{0{,}21}{0{,}60}=0{,}35.\]
+   E-Bikes haben also tatsächlich seltener einen Bremsdefekt. <strong>Nicht belegt</strong> ist damit
+   aber „sicherer“ im allgemeinen Sinn: Die Daten betreffen ausschließlich Bremsdefekte in diesem
+   einen Bestand — nichts über Unfälle, Geschwindigkeit, Fahrverhalten oder andere Mängel.<br>
+   <strong>Zweite Behauptung.</strong> Sie verwechselt zwei Größen:
+   \[P_D(E)=0{,}16\quad\text{Anteil der E-Bikes unter den defekten Rädern}\]
+   \[P_E(D)=0{,}10\quad\text{Defektquote innerhalb der E-Bikes}\]
+   Die 16 % sagen nur, wie sich die defekten Räder zusammensetzen — und das hängt stark davon ab,
+   wie viele E-Bikes es überhaupt gibt. Als Maß für Sicherheit taugt der Wert nicht.
+   Der richtige Vergleich ist das Verhältnis der Defektquoten:
+   \[\frac{0{,}35}{0{,}10}=3{,}5,\]
+   also 3,5-fach statt fünffach. Und selbst diese Zahl rechtfertigt nur die Aussage
+   „3,5-mal so häufig ein Bremsdefekt“, nicht „3,5-mal so sicher“.""")],
+  r"""In e) \(P_D(E)\) und \(P_E(D)\) verwechseln — genau die Falle, die die Aufgabe stellt.
+  Und in c) die Einschränkung weglassen: Die Zahl 80 % allein ist nur der halbe Punkt."""),
+
+A("B2", "B2 V3", "Qualitätskontrolle und Messdaten", 32,
+  r"""Ein Betrieb bezieht 60 % seiner Bauteile von Lieferant \(A\), den Rest von Lieferant \(B\).
+  Bei \(A\) sind 2 % der Teile defekt, bei \(B\) 7 %. Diese Anteile werden im Modell als
+  Wahrscheinlichkeiten verwendet. \(D\) bezeichnet „Das Teil ist defekt“, \(A\) bezeichnet
+  „Das Teil stammt von Lieferant \(A\)“ und \(\bar A\) entsprechend die Herkunft von Lieferant \(B\).
+  Ein Teil wird zufällig ausgewählt.""",
+  [("a", r"Zeichne ein Baumdiagramm nach Lieferant und Defektstatus und erstelle die vollständige Vierfeldertafel. Berechne \(P(D)\).", 7),
+   ("b", r"Zur Kontrolle: \(P(D)=0{,}04\). Berechne \(P_D(A)\) und interpretiere das Ergebnis. Untersuche die Ereignisse \(A\) und \(D\) auf Unabhängigkeit.", 6),
+   ("c", r"In einer Kontrollkiste mit 100 Teilen befinden sich genau vier defekte Teile. Zwei Teile werden zufällig ohne Zurücklegen gezogen. Berechne die Wahrscheinlichkeit für genau ein defektes Teil. Berechne außerdem im ursprünglichen Modell für drei unabhängig ausgewählte Teile die Wahrscheinlichkeit für mindestens ein defektes Teil.", 4),
+   ("d", r"Für 20 weitere Teile wurden folgende Längen gemessen: 98 mm zweimal, 99 mm viermal, 100 mm achtmal, 101 mm viermal, 102 mm zweimal. Berechne Mittelwert, empirische Varianz mit Divisor \(n\) und Standardabweichung. Interpretiere die Standardabweichung im Kontext.", 5),
+   ("e", r"Bei einer Kalibrierung wird jeder Messwert \(x\) durch \(y=1{,}02x-0{,}5\) ersetzt, wobei \(x\) und \(y\) in mm angegeben werden. Bestimme Mittelwert und Standardabweichung der korrigierten Daten und begründe dein Vorgehen ohne vollständige Neuberechnung der Liste.", 4),
+   ("f", r"Der Anteil der von \(A\) bezogenen Teile soll auf \(q\) geändert werden. Die lieferantenspezifischen Defektwahrscheinlichkeiten bleiben unverändert. Bestimme, wie groß \(q\) mindestens sein muss, damit die gesamte Defektwahrscheinlichkeit höchstens 3 % beträgt. Beurteile außerdem, ob die Daten beweisen, dass die Produktionstechnik bei \(A\) die Ursache seiner geringeren Defektquote ist.", 6)],
+  r"""Zwei Teile, ein Kontext: erst bedingte Wahrscheinlichkeiten (a bis c), dann beschreibende
+  Statistik (d, e). Teil f) verbindet beides mit einer <strong>Ungleichung</strong> und einer
+  Frage nach Ursache und Zusammenhang. Die Unterscheidung „Zusammenhang ist nicht Ursache“
+  ist der Transferteil der Aufgabe.""",
+  [("a", r"""<strong>Baumdiagramm.</strong> Erste Stufe: \(P(A)=0{,}6\), \(P(\bar A)=0{,}4\).
+   Zweite Stufe: nach \(A\) die Äste \(P_A(D)=0{,}02\) und \(0{,}98\),
+   nach \(\bar A\) die Äste \(P_{\bar A}(D)=0{,}07\) und \(0{,}93\).<br>
+   <strong>Pfadregel.</strong>
+   \[P(A\cap D)=0{,}6\cdot 0{,}02=0{,}012,\qquad P(\bar A\cap D)=0{,}4\cdot 0{,}07=0{,}028.\]
+   <table class="vft"><tr><th></th><th>\(D\)</th><th>\(\bar D\)</th><th>Summe</th></tr>
+   <tr><th>\(A\)</th><td>0,012</td><td>0,588</td><td>0,600</td></tr>
+   <tr><th>\(\bar A\)</th><td>0,028</td><td>0,372</td><td>0,400</td></tr>
+   <tr><th>Summe</th><td>0,040</td><td>0,960</td><td>1,000</td></tr></table>
+   <strong>Totale Wahrscheinlichkeit.</strong>
+   \[P(D)=0{,}012+0{,}028=0{,}04.\]"""),
+   ("b", r"""\[P_D(A)=\frac{P(A\cap D)}{P(D)}=\frac{0{,}012}{0{,}04}=0{,}3.\]
+   <strong>Interpretation.</strong> 30 % der defekten Teile stammen von Lieferant \(A\) —
+   obwohl \(A\) 60 % aller Teile liefert. \(A\) ist unter den defekten Teilen also deutlich
+   <em>unter</em>repräsentiert.<br>
+   <strong>Unabhängigkeit.</strong>
+   \[P_A(D)=0{,}02\neq 0{,}04=P(D)\;\Rightarrow\;\textbf{abhängig}.\]
+   Gleichwertig: \(P(A)\cdot P(D)=0{,}6\cdot 0{,}04=0{,}024\neq 0{,}012=P(A\cap D)\).
+   Zu wissen, von welchem Lieferanten ein Teil stammt, verändert die Defektwahrscheinlichkeit."""),
+   ("c", r"""<strong>Genau ein defektes Teil, ohne Zurücklegen.</strong> Zwei Reihenfolgen sind möglich
+   (defekt–ganz und ganz–defekt):
+   \[P=\frac{4}{100}\cdot\frac{96}{99}+\frac{96}{100}\cdot\frac{4}{99}
+   =2\cdot\frac{4\cdot 96}{9900}=\frac{768}{9900}=\frac{64}{825}\approx 0{,}0776.\]
+   <strong>Mindestens ein defektes von drei, im ursprünglichen Modell.</strong> Über das Gegenereignis:
+   \[P=1-0{,}96^3=1-0{,}884736=0{,}115264\approx 0{,}115.\]"""),
+   ("d", r"""<strong>Mittelwert.</strong> Die Werte liegen symmetrisch um 100:
+   \[\bar x=\frac{2\cdot 98+4\cdot 99+8\cdot 100+4\cdot 101+2\cdot 102}{20}=\frac{2000}{20}=100\;\text{mm}.\]
+   <strong>Varianz.</strong> Abweichungen \(-2,-1,0,1,2\) mit den Häufigkeiten \(2,4,8,4,2\):
+   \[v=\frac{2\cdot 4+4\cdot 1+8\cdot 0+4\cdot 1+2\cdot 4}{20}=\frac{24}{20}=1{,}2\;\text{mm}^2.\]
+   <strong>Standardabweichung.</strong>
+   \[s=\sqrt{1{,}2}\approx 1{,}095\;\text{mm}.\]
+   <strong>Interpretation.</strong> Die gemessenen Längen streuen im Mittel um rund 1,1 mm um den
+   Sollwert 100 mm. Die Standardabweichung ist ein <em>typisches</em> Maß für diese Streuung,
+   keine garantierte Höchstabweichung — einzelne Teile weichen um 2 mm ab."""),
+   ("e", r"""\[\bar y=1{,}02\cdot 100-0{,}5=102-0{,}5=101{,}5\;\text{mm}.\]
+   \[s_y=|1{,}02|\cdot s_x=1{,}02\cdot\sqrt{1{,}2}\approx 1{,}117\;\text{mm}.\]
+   <strong>Begründung ohne Neuberechnung.</strong> Bei einer linearen Umrechnung \(y=mx+b\) gilt
+   \(\bar y=m\bar x+b\) und \(s_y=|m|\cdot s_x\).<br>
+   Der Summand \(-0{,}5\) verschiebt jeden Messwert <em>und</em> den Mittelwert gleich weit;
+   die Abweichungen \(x_i-\bar x\) bleiben unverändert, die Streuung also auch.
+   Der Faktor \(1{,}02\) streckt dagegen jede Abweichung um denselben Faktor — deshalb wächst
+   die Standardabweichung genau um 2 %."""),
+   ("f", r"""<strong>Ungleichung aufstellen.</strong> Mit dem Anteil \(q\) für Lieferant \(A\):
+   \[P(D)=0{,}02q+0{,}07(1-q)=0{,}07-0{,}05q.\]
+   Gefordert ist \(P(D)\le 0{,}03\):
+   \[0{,}07-0{,}05q\le 0{,}03\;\Longleftrightarrow\;0{,}04\le 0{,}05q\;\Longleftrightarrow\;q\ge 0{,}8.\]
+   Mindestens <strong>80 %</strong> der Teile müssten von \(A\) kommen.
+   Wichtig ist dabei die Modellannahme, dass die beiden Defektquoten 2 % und 7 % unverändert bleiben —
+   bei einer stark erhöhten Abnahmemenge muss das nicht so sein.<br>
+   <strong>Ursache oder nur Zusammenhang?</strong> Nein, die Daten beweisen das nicht.
+   Gemessen ist allein, dass die Defektquote bei \(A\) niedriger liegt. Über den <em>Grund</em>
+   sagen die Zahlen nichts. Denkbar sind andere Erklärungen:
+   \(A\) liefert vielleicht andere oder einfachere Teiletypen, es wird anders geprüft oder
+   transportiert, oder die Teile beider Lieferanten werden unterschiedlich eingesetzt.
+   Für eine Ursachenaussage bräuchte man vergleichbare Bedingungen — nicht nur zwei Quoten.""")],
+  r"""In f) beim Umformen der Ungleichung das Ungleichheitszeichen mitdrehen.
+  Hier passiert das nicht (man teilt durch \(+0{,}05\)), aber wer zuerst mit \(-1\) multipliziert,
+  muss umdrehen. Zweiter Klassiker: in b) \(P_D(A)\) und \(P_A(D)\) verwechseln."""),
+
+
 print(f"{len(AUFGABEN)} Aufgaben")
 json.dump(AUFGABEN, open('aufgaben.json','w'), ensure_ascii=False, indent=1)
 
@@ -536,7 +871,11 @@ BLOECKE = {
     "A6": "Empirische Kenngrößen",
     "A7": "Simulationen beschreiben",
     "A8": "Ereignisse als Mengen",
+    "B1": "Geometrie im Sachzusammenhang",
+    "B2": "Stochastik im Sachzusammenhang",
 }
+TEILE = [("Teil A", "hilfsmittelfrei", ["A1","A2","A3","A4","A5","A6","A7","A8"]),
+         ("Teil B", "mit WTR und Formelsammlung", ["B1","B2"])]
 
 CSS = r"""
 :root{
@@ -557,7 +896,7 @@ header.top p{margin:0;opacity:.88;font-size:.98rem}
 header.top .kurs{font-family:var(--sans);font-size:.78rem;letter-spacing:.09em;
      text-transform:uppercase;opacity:.75;margin-bottom:10px}
 
-nav.blocks{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 30px}
+nav.blocks{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px}
 nav.blocks a{font-family:var(--sans);font-size:.8rem;text-decoration:none;
      background:var(--paper);border:1px solid var(--line);border-radius:999px;
      padding:5px 13px;color:var(--accent)}
@@ -567,9 +906,15 @@ nav.blocks a:hover{background:var(--accent);color:#fff;border-color:var(--accent
      padding:16px 20px;margin-bottom:34px;font-size:.96rem;color:var(--mute)}
 .intro strong{color:var(--ink)}
 
-h2.block{font-size:1.18rem;margin:44px 0 4px;padding-bottom:7px;
+h2.teil{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin:58px 0 0;
+     padding:13px 18px;background:var(--accent);color:#fff;border-radius:8px;font-size:1.28rem}
+h2.teil small{font-family:var(--sans);font-size:.78rem;font-weight:400;opacity:.85}
+h2.teil:first-of-type{margin-top:10px}
+nav.blocks .navteil{font-family:var(--sans);font-size:.72rem;letter-spacing:.09em;
+     text-transform:uppercase;color:var(--mute);width:100%;margin-bottom:-2px}
+h3.block{font-size:1.18rem;margin:44px 0 4px;padding-bottom:7px;
      border-bottom:2px solid var(--accent);scroll-margin-top:14px}
-h2.block .kuerzel{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;
+h3.block .kuerzel{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;
      color:var(--accent);display:block;margin-bottom:3px}
 
 article.aufgabe{background:var(--paper);border:1px solid var(--line);border-radius:10px;
@@ -622,6 +967,7 @@ footer a{color:var(--accent)}
 @media (max-width:560px){
   body{font-size:16px}
   header.top h1{font-size:1.45rem}
+  h2.teil{font-size:1.1rem}
   .kopf .be{margin-left:0;width:100%}
 }
 @media print{
@@ -655,10 +1001,11 @@ def render():
                '</div></header>')
 
     out.append('<div class="wrap">')
-    out.append('<nav class="blocks">')
-    for k, t in BLOECKE.items():
-        out.append(f'<a href="#{k}">{k} · {t}</a>')
-    out.append('</nav>')
+    for name, hilfs, keys in TEILE:
+        out.append(f'<nav class="blocks"><span class="navteil">{name} · {hilfs}</span>')
+        for k in keys:
+            out.append(f'<a href="#{k}">{k} · {BLOECKE[k]}</a>')
+        out.append('</nav>')
 
     out.append('<div class="intro"><strong>So arbeitest du damit:</strong> '
                'Aufgabe erst vollständig selbst rechnen, dann die Musterlösung aufklappen. '
@@ -667,15 +1014,22 @@ def render():
                'Der gelbe Kasten am Ende zeigt den Fehler, der bei dieser Aufgabe am häufigsten passiert.<br><br>'
                'Für die empirische Varianz gilt durchgehend der Divisor '
                r'\(n\): \(v=\frac1n\sum (x_i-\bar x)^2\) und \(s=\sqrt v\). '
-               'Hilfsmittel sind nicht nötig — alle Ergebnisse sind exakte Brüche oder Wurzeln.'
+               'In Teil A sind Hilfsmittel nicht nötig — dort sind alle Ergebnisse exakte Brüche oder Wurzeln. '
+               'Teil B besteht aus den vier großen Sachaufgaben und ist für WTR und Formelsammlung gedacht.'
                '</div>')
 
-    for kuerzel, titel in BLOECKE.items():
+    for name, hilfs, keys in TEILE:
+      anz = sum(1 for a in AUFGABEN if a["block"] in keys)
+      pkt = sum(a["be"] for a in AUFGABEN if a["block"] in keys)
+      out.append(f'<h2 class="teil"><span>{name}</span>'
+                 f'<small>{hilfs} · {anz} Aufgaben · {pkt} BE</small></h2>')
+      for kuerzel in keys:
+        titel = BLOECKE[kuerzel]
         liste = [a for a in AUFGABEN if a["block"] == kuerzel]
         if not liste:
             continue
-        out.append(f'<h2 class="block" id="{kuerzel}">'
-                   f'<span class="kuerzel">Block {kuerzel}</span>{titel}</h2>')
+        out.append(f'<h3 class="block" id="{kuerzel}">'
+                   f'<span class="kuerzel">Block {kuerzel}</span>{titel}</h3>')
         for a in liste:
             out.append('<article class="aufgabe">')
             out.append(f'<div class="kopf"><span class="id">{a["kennung"]}</span>'
