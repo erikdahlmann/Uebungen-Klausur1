@@ -1073,7 +1073,7 @@ document.addEventListener("DOMContentLoaded",function(){
   });
 });
 </script>''')
-    out.append('</body></html>')
+    out.append('<!-- rechtliches --><style>.erik-recht{font:13px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;text-align:center;padding:18px 12px 22px;opacity:.75}.erik-recht a{color:inherit}@media print{.erik-recht{display:none}}</style><footer class="erik-recht"><a href="https://erikdahlmann.github.io/impressum.html">Impressum</a> · <a href="https://erikdahlmann.github.io/datenschutz.html">Datenschutz</a></footer><!-- /rechtliches --></body></html>')
     return "\n".join(out)
 
 open('index.html','w').write(render())
